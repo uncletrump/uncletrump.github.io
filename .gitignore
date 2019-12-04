@@ -1,0 +1,25 @@
+# .gitignore_global
+
+### MAC OS ###
+.
+..
+.DS_Store
+.DS_Store?
+*.swp
+._*
+.Spotlight-V100
+.Trash
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+### packages ###
+*.7z  
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip

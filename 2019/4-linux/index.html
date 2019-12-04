@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/3-linux/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/5-linux/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/4-linux/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux用户管理 | Bing
+       
+  </title>
+  <meta name="title" content="Linux用户管理 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux用户管理",
+    "headline" : "Linux用户管理",
+    "description" : "在linux中，一个用户属于一个组。 创建一个用户后，默认会在\/home\/username创建一个和用户名相同的目录，该目录就是用户的家目录 当",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-09 16:00:39 \x2b0000 UTC",
+    "dateModified" : "2019-11-09 16:00:39 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/4-linux\/",
+    "wordCount" : "808",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux用户管理</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-09 itemprop="datePublished">November 9, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<ol>
+<li>在linux中，一个用户属于一个组。</li>
+<li>创建一个用户后，默认会在/home/username创建一个和用户名相同的目录，该目录就是用户的家目录</li>
+<li>当切换一个用户登录后，默认会切换到用户家目录</li>
+<li>一个用户默认不能进入其他用户目录</li>
+<li>用户权限体现在对文件的操作</li>
+</ol>
+
+<h3 id="添加用户">添加用户</h3>
+
+<pre><code class="language-shell">useradd [options] username
+#执行时，如果没有设置option,系统将自动创建一个和username名字相同的组，并将username用户放进改组。
+</code></pre>
+
+<pre><code class="language-shell">useradd -d [/home/xx] username #给新创建的用户指定家目录
+</code></pre>
+
+<h4 id="给用户指定或者修改密码">给用户指定或者修改密码</h4>
+
+<pre><code class="language-shell">passwd username #如果没有带用户名，则是给当前登录的用户修改密码
+</code></pre>
+
+<h3 id="删除用户">删除用户</h3>
+
+<pre><code class="language-shell">userdel username #删除用户，但是保留用户家目录
+</code></pre>
+
+<pre><code class="language-shell">userdel -r username #删除用户，并且删除用户家目录
+</code></pre>
+
+<h3 id="查询用户信息">查询用户信息</h3>
+
+<pre><code class="language-shell">id username
+
+#e.g.
+[root@48d2298d7bbd /]# id root
+uid=0(root) gid=0(root) groups=0(root)
+#uid 用户id,唯一
+#gid 用户所在组id
+#groups 组名
+
+#当用户名不存在时，返回无此用户
+</code></pre>
+
+<h3 id="切换用户">切换用户</h3>
+
+<pre><code class="language-shell">su - username
+#从权限高的用户切换到权限低的用户，不需要密码，反之需要。
+#当需要返回原来的用户时，使用exit指令
+#如果su - 没有带用户名，则默认切换到root用户
+</code></pre>
+
+<h3 id="查看当前用户-登录用户">查看当前用户/登录用户</h3>
+
+<pre><code class="language-shell">whoami/who am i
+</code></pre>
+
+<h3 id="用户组">用户组</h3>
+
+<p>类似于角色，系统可以对共性的多个用户进行统一管理</p>
+
+<h4 id="新增组">新增组</h4>
+
+<pre><code class="language-shell">groupadd [组名]
+
+#增加用户时直接加上组
+useradd -g [groupname] [username]
+</code></pre>
+
+<h4 id="删除组">删除组</h4>
+
+<pre><code class="language-shell">groupdel [组名]
+#前提:当前组没有用户时，才能删除
+</code></pre>
+
+<h4 id="修改用户所在组">修改用户所在组</h4>
+
+<pre><code class="language-shell">usermod -g [newgroupname] [username]
+</code></pre>
+
+<h3 id="用户和组的相关文件">用户和组的相关文件</h3>
+
+<pre><code class="language-shell">/etc/passwd
+</code></pre>
+
+<p>用户（user）的配置文件，记录用户的各种信息</p>
+
+<p>每行的含义：用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell</p>
+
+<p>e.g.</p>
+
+<pre><code class="language-shell">[root@48d2298d7bbd /]# cat /etc/passwd
+root❌0:0:root:/root:/bin/bash
+#root	 用户名
+#x 用户的加密密码，加密后密码保存在/etc/shadow文件
+#0 第一个0用户id
+#0 第二个0用户组id
+#/root 用户家目录
+#/bin/bash 使用的shell类型
+</code></pre>
+
+<pre><code class="language-shell">/etc/shadow #口令配置文件
+</code></pre>
+
+<p>每行的含义：登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:保留</p>
+
+<pre><code class="language-shell">/etc/group
+</code></pre>
+
+<p>每行含义：组名:口令:组标识号:组内用户列表</p>
+
+<p>e.g.</p>
+
+<pre><code class="language-shell">[root@48d2298d7bbd /]# cat /etc/group
+root❌0:
+</code></pre>
+
+<hr />
+
+<p>相关链接</p>
+
+<p>🔗<a href="/2019/11-linux/" rel="nofollow noreferrer" target="_blank">Linux组管理和权限管理</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/4-linux/>https://uncletrump.github.io/2019/4-linux/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/3-linux/" class="prev" rel="prev" title="Linux用户登陆和注销"><i class="iconfont icon-left"></i>&nbsp;Linux用户登陆和注销</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/5-linux/" class="next" rel="next" title="Linux运行级别">Linux运行级别&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

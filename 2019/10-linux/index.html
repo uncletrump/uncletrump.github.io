@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/9-linux/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/11-linux/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/10-linux/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux压缩和解压类 | Bing
+       
+  </title>
+  <meta name="title" content="Linux压缩和解压类 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux压缩和解压类",
+    "headline" : "Linux压缩和解压类",
+    "description" : "gzip\/gunzip gzip用于压缩文件，只能将文件压缩为*.gz类型，压缩后不会保留原文件 gunzip用于解压文件 #e.g. gzip \/home hello.txt gunzip \/home hello.txt.gz zip\/unzip zip [options] XXX.zip -r #递归压缩，即压缩",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-10 09:16:33 \x2b0000 UTC",
+    "dateModified" : "2019-11-10 09:16:33 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/10-linux\/",
+    "wordCount" : "340",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux压缩和解压类</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-10 itemprop="datePublished">November 10, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="gzip-gunzip">gzip/gunzip</h3>
+
+<p>gzip用于压缩文件，只能将文件压缩为*.gz类型，压缩后不会保留原文件</p>
+
+<p>gunzip用于解压文件</p>
+
+<pre><code class="language-shell">#e.g.
+gzip /home hello.txt
+gunzip /home hello.txt.gz
+</code></pre>
+
+<h3 id="zip-unzip">zip/unzip</h3>
+
+<pre><code class="language-shell">zip [options] XXX.zip
+	-r #递归压缩，即压缩目录
+unzip [option] XXX.zip
+	-d [目录] #指定解压后文件的存放目录
+	
+
+#e.g.
+#将 /home下的 所有文件进行压缩成 mypackage.zip
+zip  -r   mypackage.zip  /home/
+#将 mypackge.zip 解压到 /opt/tmp 目录下
+unzip –d  /opt/tmp  mypackage.zip   #[如果/opt/tmp 不存在，会自动创建]
+</code></pre>
+
+<h3 id="tar">tar</h3>
+
+<p>tar 指令 是打包指令，最后打包后的文件是 .tar.gz 的文件。 [可以压缩，和解压]</p>
+
+<pre><code class="language-shell">tar  [选项]  XXX.tar.gz  打包的内容/目录
+	-c #产生.tar打包文件
+	-v #显示详细信息
+	-f #指定压缩后的文件名
+	-z #打包同时压缩
+	-x #解压.tar文件
+	
+#e.g.
+#压缩多个文件
+tar  -zcvf  a.tar.gz  a1.txt  a2.txt
+#压缩/home 的文件夹
+tar  -zcvf   myhome.tar.gz   /home/
+#将 a.tar.gz  解压到当前目录
+tar -zxvf  a.tar.gz 
+#将myhome.tar.gz  解压到 /opt/tmp2目录下
+tar -zxvf myhome.tar.gz  -C  /opt/tmp2  [注意 /opt/tmp2 事先需要创建好]
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/10-linux/>https://uncletrump.github.io/2019/10-linux/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/9-linux/" class="prev" rel="prev" title="Linux搜索查找类"><i class="iconfont icon-left"></i>&nbsp;Linux搜索查找类</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/11-linux/" class="next" rel="next" title="Linux组管理和权限管理">Linux组管理和权限管理&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

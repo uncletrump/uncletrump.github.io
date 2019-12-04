@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/6-linux/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/8-linux/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/7-linux/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux文件目录指令 | Bing
+       
+  </title>
+  <meta name="title" content="Linux文件目录指令 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux文件目录指令",
+    "headline" : "Linux文件目录指令",
+    "description" : "常用命令 pwd pwd #显示当前工作目录的绝对路径 ls ls [options] [目录或者文件] #显示当前目录下的所有文件和目录 -a:#显示当前目录的所有文件和目录，包括隐藏",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-09 17:32:35 \x2b0000 UTC",
+    "dateModified" : "2019-11-09 17:32:35 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/7-linux\/",
+    "wordCount" : "1252",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux文件目录指令</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-09 itemprop="datePublished">November 9, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="常用命令">常用命令</h3>
+
+<h4 id="pwd">pwd</h4>
+
+<pre><code class="language-shell">pwd #显示当前工作目录的绝对路径
+</code></pre>
+
+<h4 id="ls">ls</h4>
+
+<pre><code class="language-shell">ls [options] [目录或者文件] #显示当前目录下的所有文件和目录
+	-a:#显示当前目录的所有文件和目录，包括隐藏的
+	-l:#以列表形式显示信息
+	-h:#显示文件大小时，以k，m，G单位显示
+</code></pre>
+
+<h4 id="cd">cd</h4>
+
+<pre><code class="language-shell">cd [path] #切换工作目录
+</code></pre>
+
+<h4 id="mkdir">mkdir</h4>
+
+<pre><code class="language-shell">mkdir [options] [目录] #创建文件夹
+	-p #创建多级目录 #e.g. mkdir -p /xx/xx/xx
+</code></pre>
+
+<h4 id="rmdir">rmdir</h4>
+
+<pre><code class="language-shell">rmdir [options] [目录] #删除空目录，有内容时无法删除
+</code></pre>
+
+<h4 id="rm">rm</h4>
+
+<pre><code class="language-shell">rm [options] [目录或者文件] #删除文件或目录
+	-r #表示递归
+	-f #表示强制删除，不需要询问
+</code></pre>
+
+<h4 id="touch">touch</h4>
+
+<pre><code class="language-shell">touch [文件] #创建一个空文件，若文件存在，表示刷新文件的修改时间
+</code></pre>
+
+<h4 id="cp">cp</h4>
+
+<pre><code class="language-shell">cp [options] source[源] dest[目的文件] #指令拷贝文件到指定目录
+	-r #递归复制整个文件夹
+	#注意：\cp表示强制覆盖不提示
+</code></pre>
+
+<h4 id="mv">mv</h4>
+
+<pre><code class="language-shell">mv #移动文件或者重命名
+#操作时，如果在同一目标，表示改名，否则表示移动
+</code></pre>
+
+<h4 id="cat">cat</h4>
+
+<pre><code class="language-shell">cat #查看文件内容
+	cat [options] [filename]
+		-n #显示行号
+	#如果需要显示下一行，输入enter
+	#如果需要翻页，输入空格键
+	#如果需要退出，输入q
+	#cat只能浏览文件，不能修改文件，为了浏览方便，一般会带上管道命令 | more
+		#e.g.
+		#cat xxx.txt | more
+</code></pre>
+
+<h4 id="more">more</h4>
+
+<pre><code class="language-shell">more [文件]
+#more指令是一个基于VI编辑器的文本过滤器，它以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键
+</code></pre>
+
+<h5 id="快捷键">快捷键</h5>
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>空白键 (space)</td>
+<td>代表向下翻一页</td>
+</tr>
+
+<tr>
+<td>Enter</td>
+<td>代表向下翻『一行』</td>
+</tr>
+
+<tr>
+<td>q</td>
+<td>代表立刻离开 more ，不再显示该文件内容</td>
+</tr>
+
+<tr>
+<td>Ctrl+F</td>
+<td>向下滚动一屏</td>
+</tr>
+
+<tr>
+<td>Ctrl+B</td>
+<td>返回上一屏</td>
+</tr>
+
+<tr>
+<td>=</td>
+<td>输出当前行的行号</td>
+</tr>
+
+<tr>
+<td>:f</td>
+<td>输出文件名和当前行的行号</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="less">less</h4>
+
+<p>less指令用来分屏查看文件内容，它的功能与more指令类似，但是比more指令更加强大，支持各种显示终端。less指令在显示文件内容时，并不是一次将整个文件加载之后才显示，而是根据显示需要加载内容，对于显示大型文件具有较高的效率。</p>
+
+<pre><code class="language-shell">less [filename]
+</code></pre>
+
+<h5 id="快捷键-1">快捷键</h5>
+
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Space</td>
+<td>向下翻动一页</td>
+</tr>
+
+<tr>
+<td>Pagedown</td>
+<td>向下翻动一页</td>
+</tr>
+
+<tr>
+<td>Pageup</td>
+<td>向上翻动一页</td>
+</tr>
+
+<tr>
+<td>/字串</td>
+<td>向下搜寻[字串]功能 n:向下查找 N:向上查找</td>
+</tr>
+
+<tr>
+<td>?字串</td>
+<td>向上搜寻[字串]功能 n:向上查找 N:向下查找</td>
+</tr>
+
+<tr>
+<td>q</td>
+<td>离开less这个程序</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_15">&gt; &amp; &gt;&gt;</h4>
+
+<pre><code class="language-shell">&gt; #输出重定向
+&gt;&gt; #追加
+ls -l &gt; filename #列表内容写入file中（覆盖写）
+ls -al &gt;&gt; filename #列表内容追加到文件file的末尾
+cat file1 &gt; file2 #将文件1内容覆盖到文件2
+echo &quot;内容&quot; &gt;&gt; file #将内容追加到file末尾
+</code></pre>
+
+<h4 id="echo">echo</h4>
+
+<p>输出内容到控制台</p>
+
+<pre><code class="language-shell">echo [options] [输出内容]
+#e.g.
+#echo $PATH
+</code></pre>
+
+<h4 id="head">head</h4>
+
+<p>head用于显示文件开头部分内容，默认情况下显示文件的前10行内容</p>
+
+<pre><code class="language-shell">head 文件 #（查看文件头10行内容）
+head -n 5 文件#(查看文件头5行内容，5可以是任意行数)
+</code></pre>
+
+<h4 id="tail">tail</h4>
+
+<p>tail用于输出文件中尾部的内容，默认情况下tail指令显示文件的后10行内容</p>
+
+<pre><code class="language-shell">tail 文件 #（查看头10行文件）
+tail -n 5 文件 #（查看头5行文件，5可以是任意数）
+tail -f 文件 #（监控文件的所有更新）
+</code></pre>
+
+<h4 id="ln">ln</h4>
+
+<p>软链接也成为符号链接，类似于windows里的快捷方式，主要存放了链接其他文件的路径</p>
+
+<pre><code class="language-shell">ln -s [原文件或目录] [软链接名] （功能描述：给原文件创建一个软链接）
+#当我们使用pwd指令查看目录时，仍然看到的是软链接所在目录
+</code></pre>
+
+<h4 id="history">history</h4>
+
+<p>查看已经执行过历史命令,也可以执行历史指令</p>
+
+<pre><code class="language-shell">history #显示所有的历史命令
+history 10 #显示最近使用过的10个指令
+!5 #执行历史编号为5的指令
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/7-linux/>https://uncletrump.github.io/2019/7-linux/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/6-linux/" class="prev" rel="prev" title="Linux帮助指令"><i class="iconfont icon-left"></i>&nbsp;Linux帮助指令</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/8-linux/" class="next" rel="next" title="Linux时间日期类">Linux时间日期类&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

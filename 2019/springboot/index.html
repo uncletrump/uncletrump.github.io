@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://uncletrump.github.io/2019/springboot/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Springboot | Bing
+       
+  </title>
+  <meta name="title" content="Springboot | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Springboot",
+    "headline" : "Springboot",
+    "description" : "Quick start maven工程创建springboot pom.xml参考springboot官方文档 pom.xml \x26lt;parent\x26gt; \x26lt;groupId\x26gt;org.springframework.boot\x26lt;\/groupId\x26gt; \x26lt;artifactId\x26gt;spring-boot-starter-parent\x26lt;\/artifactId\x26gt; \x26lt;version\x26gt;2.1.8.RELEASE\x26lt;\/version\x26gt; \x26lt;\/parent\x26gt; \x26lt;!-- Add typical dependencies for a web application --\x26gt; \x26lt;dependencies\x26gt; \x26lt;dependency\x26gt; \x26lt;groupId\x26gt;org.springframework.boot\x26lt;\/groupId\x26gt; \x26lt;artifactId\x26gt;spring-boot-starter-web\x26lt;\/artifactId\x26gt; \x26lt;\/dependency\x26gt; \x26lt;\/dependencies\x26gt; \x26lt;!-- Package as an executable",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-10-13 21:32:34 \x2b0900 \x2b0900",
+    "dateModified" : "2019-10-13 21:32:34 \x2b0900 \x2b0900",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/springboot\/",
+    "wordCount" : "485",
+    "keywords" : [ "springboot", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Springboot</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-10-13 itemprop="datePublished">October 13, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/spring/"> spring </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h1 id="quick-start">Quick start</h1>
+
+<h2 id="maven工程创建springboot">maven工程创建springboot</h2>
+
+<p>pom.xml参考<a href="https://spring.io/projects/spring-boot#learn" rel="nofollow noreferrer" target="_blank">springboot官方文档</a></p>
+
+<h3 id="pom-xml">pom.xml</h3>
+
+<pre><code class="language-xml">&lt;parent&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+  &lt;version&gt;2.1.8.RELEASE&lt;/version&gt;
+&lt;/parent&gt;
+
+&lt;!-- Add typical dependencies for a web application --&gt;
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;!-- Package as an executable jar --&gt;
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="language-java">@RestController
+@EnableAutoConfiguration
+public class Example {
+    @RequestMapping(&quot;/&quot;)
+    String home() {
+        return &quot;Hello World!&quot;;
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Example.class, args);
+    }
+}
+
+</code></pre>
+
+<h3 id="ide快速创建springboot项目">ide快速创建springboot项目</h3>
+
+<p>idea:spring Initializr</p>
+
+<p>eclipse:STS使用 Spring Starter Project快速创建项目</p>
+
+<p>spring Initializr会自动创建pom.xml和项目的主程序</p>
+
+<p>项目目录结构：</p>
+
+<p><img src="https://raw.githubusercontent.com/uncletrump/images/master/notes/springboot/20190924015009.png" alt="20190924015009" style="zoom:50%;" /></p>
+
+<p>resources文件夹中目录结构</p>
+
+<ul>
+<li>static：保存所有的静态资源, js css  images等；</li>
+<li>templates：保存所有的模板页面，（Spring Boot默认jar包使用嵌入式的Tomcat，默认不支持JSP页面），可以使用模板引擎（freemarker、thymeleaf）；</li>
+
+<li><p>application.properties：Spring Boot应用的配置文件，可以修改一些默认设置；</p>
+
+<pre><code class="language-java">@SpringBootApplication
+public class SpringbootApplication {
+
+public static void main(String[] args) {
+    SpringApplication.run(SpringbootApplication.class, args);
+}
+
+}
+
+</code></pre></li>
+</ul>
+
+<p><a href="/2019/springbootapplication/" rel="nofollow noreferrer" target="_blank">@SpringBootApplication</a>: Spring Boot应用标注在某个类上说明这个类是SpringBoot的主配置类，SpringBoot就应该运行这个类的main方法来启动SpringBoot应用</p>
+
+<h1 id="springboot配置">springboot配置</h1>
+
+<p>​</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/springboot/>https://uncletrump.github.io/2019/springboot/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/springboot/">
+                    #springboot</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

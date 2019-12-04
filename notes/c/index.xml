@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Bing</title>
+    <link>https://uncletrump.github.io/notes/c/</link>
+    <description>Recent content in C on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 Dec 2019 12:26:45 +0000</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/notes/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C言語</title>
+      <link>https://uncletrump.github.io/2019/c/</link>
+      <pubDate>Tue, 03 Dec 2019 12:26:45 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/c/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

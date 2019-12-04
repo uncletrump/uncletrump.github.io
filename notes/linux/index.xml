@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux &amp; Shell on Bing</title>
+    <link>https://uncletrump.github.io/notes/linux/</link>
+    <description>Recent content in Linux &amp; Shell on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 09 Nov 2019 09:50:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/notes/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell</title>
+      <link>https://uncletrump.github.io/2019/shell/</link>
+      <pubDate>Sat, 09 Nov 2019 10:34:11 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://uncletrump.github.io/2019/linux/</link>
+      <pubDate>Sat, 09 Nov 2019 10:34:04 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/linux/</guid>
+      <description>Linux目录结构 Linux开机&amp;amp;重启命令 Linux用户登陆&amp;amp;注销 Linux用户管理 Linux运行级别 Linux帮助指令 Li</description>
+    </item>
+    
+  </channel>
+</rss>

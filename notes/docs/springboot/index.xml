@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Springboot on Bing</title>
+    <link>https://uncletrump.github.io/notes/docs/springboot/</link>
+    <description>Recent content in Springboot on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 13 Oct 2019 23:27:03 +0900</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/notes/docs/springboot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBootApplication</title>
+      <link>https://uncletrump.github.io/2019/springbootapplication/</link>
+      <pubDate>Sun, 13 Oct 2019 23:28:27 +0900</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/springbootapplication/</guid>
+      <description>@SpringBootApplication注解 @Target({ElementType.TYPE}) @Retention(RetentionPolicy.RUNTIME) @Documented @Inherited @SpringBootConfiguration @EnableAutoConfiguration @ComponentScan( excludeFilters = {@Filter( type = FilterType.CUSTOM, classes = {TypeExcludeFilter.class} ), @Filter( type = FilterType.CUSTOM, classes = {AutoConfigurationExcludeFilter.class} )} ) public @interface SpringBootApplication { } @SpringBootConfiguration:Spring Boot的配置类， ​ 标注在</description>
+    </item>
+    
+  </channel>
+</rss>

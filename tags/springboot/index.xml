@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>springboot on Bing</title>
+    <link>https://uncletrump.github.io/tags/springboot/</link>
+    <description>Recent content in springboot on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 13 Oct 2019 23:28:27 +0900</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringBootApplication</title>
+      <link>https://uncletrump.github.io/2019/springbootapplication/</link>
+      <pubDate>Sun, 13 Oct 2019 23:28:27 +0900</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/springbootapplication/</guid>
+      <description>@SpringBootApplication注解 @Target({ElementType.TYPE}) @Retention(RetentionPolicy.RUNTIME) @Documented @Inherited @SpringBootConfiguration @EnableAutoConfiguration @ComponentScan( excludeFilters = {@Filter( type = FilterType.CUSTOM, classes = {TypeExcludeFilter.class} ), @Filter( type = FilterType.CUSTOM, classes = {AutoConfigurationExcludeFilter.class} )} ) public @interface SpringBootApplication { } @SpringBootConfiguration:Spring Boot的配置类， ​ 标注在</description>
+    </item>
+    
+    <item>
+      <title>Springboot</title>
+      <link>https://uncletrump.github.io/2019/springboot/</link>
+      <pubDate>Sun, 13 Oct 2019 21:32:34 +0900</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/springboot/</guid>
+      <description>Quick start maven工程创建springboot pom.xml参考springboot官方文档 pom.xml &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.1.8.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;!-- Add typical dependencies for a web application --&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;!-- Package as an executable</description>
+    </item>
+    
+  </channel>
+</rss>

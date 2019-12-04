@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Bing</title>
+    <link>https://uncletrump.github.io/notes/docs/linux/</link>
+    <description>Recent content in Linux on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 09 Nov 2019 12:12:34 +0000</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/notes/docs/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux RPM和YUM</title>
+      <link>https://uncletrump.github.io/2019/18-linux/</link>
+      <pubDate>Sun, 24 Nov 2019 17:15:12 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/18-linux/</guid>
+      <description>rpm包的管理 一种用于互联网下载包的打包及安装工具，它包含在某些 Linux 分发版中。它生成具有.RPM 扩展名的文件。RPM 是 RedHat Package Manager(RedHat 软件包管理工具)的</description>
+    </item>
+    
+    <item>
+      <title>Linux动态监控进程或网络服务</title>
+      <link>https://uncletrump.github.io/2019/17-linux/</link>
+      <pubDate>Sun, 24 Nov 2019 15:45:45 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/17-linux/</guid>
+      <description>动态监控进程 top top 与 ps 命令很相似。它们都用来显示正在执行的进程。Top 与 ps 最大的不同之处，在于 top 在 执行一段时间可以更新正在运行的的进程。 top</description>
+    </item>
+    
+    <item>
+      <title>Linux服务管理</title>
+      <link>https://uncletrump.github.io/2019/16-linux/</link>
+      <pubDate>Sun, 24 Nov 2019 14:44:14 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/16-linux/</guid>
+      <description>服务管理 服务(service) 本质就是进程，但是是运行在后台的，通常都会监听某个端口，等待其它程序的请 求，比如(mysql , sshd 防火墙等)，因</description>
+    </item>
+    
+    <item>
+      <title>Linux进程管理</title>
+      <link>https://uncletrump.github.io/2019/15-linux/</link>
+      <pubDate>Sun, 17 Nov 2019 15:01:23 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/15-linux/</guid>
+      <description>查看系统执行的进程 ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。 可以不加任何参数. 字段 说明 PID 进程识别号 TTY 终端机号 TIME 此进程</description>
+    </item>
+    
+    <item>
+      <title>Linux网络配置</title>
+      <link>https://uncletrump.github.io/2019/14-linux/</link>
+      <pubDate>Sun, 17 Nov 2019 14:34:59 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/14-linux/</guid>
+      <description>指定固定ip 编辑 /etc/sysconfig/network-scripts/ifcfg-eth0 ifcfg-eth0文件说明 DEVICE=eth0 #接口名(设备,网卡) HWADDR=00:0C:2x:6x:0x:xx #MAC地址 TYPE=Ethernet #网络类型(通常是Ethemet) UUID=926a57ba-92c6-4231-bacb-f27e5e6a9f44 #随机id #系统启</description>
+    </item>
+    
+    <item>
+      <title>Linux磁盘分区挂载</title>
+      <link>https://uncletrump.github.io/2019/13-linux/</link>
+      <pubDate>Sat, 16 Nov 2019 10:39:39 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/13-linux/</guid>
+      <description>分区的方式 mbr分区 最多支持四个主分区 系统只能安装在主分区 扩展分区要占一个主分区 MBR最大只支持2TB，但拥有最好的兼容性gtp分区 gtp分</description>
+    </item>
+    
+    <item>
+      <title>Linux定时调度任务</title>
+      <link>https://uncletrump.github.io/2019/12-linux/</link>
+      <pubDate>Sat, 16 Nov 2019 09:32:26 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/12-linux/</guid>
+      <description>crond任务调度 crontab进行定时任务设置 crontab [options] -e 设置定时任务 -a 编辑crontab定时任务 -l 查询crontab任务 -r 删除当前用户所有的c</description>
+    </item>
+    
+    <item>
+      <title>Linux组管理和权限管理</title>
+      <link>https://uncletrump.github.io/2019/11-linux/</link>
+      <pubDate>Sun, 10 Nov 2019 09:56:52 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/11-linux/</guid>
+      <description>在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。 文件/目录的所有者 一般为文件的</description>
+    </item>
+    
+    <item>
+      <title>Linux压缩和解压类</title>
+      <link>https://uncletrump.github.io/2019/10-linux/</link>
+      <pubDate>Sun, 10 Nov 2019 09:16:33 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/10-linux/</guid>
+      <description>gzip/gunzip gzip用于压缩文件，只能将文件压缩为*.gz类型，压缩后不会保留原文件 gunzip用于解压文件 #e.g. gzip /home hello.txt gunzip /home hello.txt.gz zip/unzip zip [options] XXX.zip -r #递归压缩，即压缩</description>
+    </item>
+    
+    <item>
+      <title>Linux搜索查找类</title>
+      <link>https://uncletrump.github.io/2019/9-linux/</link>
+      <pubDate>Sun, 10 Nov 2019 08:51:55 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/9-linux/</guid>
+      <description>find指令 find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。 find [搜索范围] [选项] 选项 功能 -name</description>
+    </item>
+    
+    <item>
+      <title>Linux时间日期类</title>
+      <link>https://uncletrump.github.io/2019/8-linux/</link>
+      <pubDate>Sun, 10 Nov 2019 07:45:51 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/8-linux/</guid>
+      <description>date date #显示当前时间 date &amp;quot;+%Y&amp;quot; #显示当前年份 date &amp;quot;+%m&amp;quot; #显示当前月份 date &amp;quot;+%d&amp;quot; #显示当前是哪一天 date &amp;quot;+%Y %m %d %H:%M:%S&amp;quot; #显示当前年月日时分秒 date设置系统时间 date -s #字符串</description>
+    </item>
+    
+    <item>
+      <title>Linux文件目录指令</title>
+      <link>https://uncletrump.github.io/2019/7-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 17:32:35 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/7-linux/</guid>
+      <description>常用命令 pwd pwd #显示当前工作目录的绝对路径 ls ls [options] [目录或者文件] #显示当前目录下的所有文件和目录 -a:#显示当前目录的所有文件和目录，包括隐藏</description>
+    </item>
+    
+    <item>
+      <title>Linux帮助指令</title>
+      <link>https://uncletrump.github.io/2019/6-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 17:27:05 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/6-linux/</guid>
+      <description>man 获得帮助信息 man [命令或配置文件] #e.g. #man ls help 指令 help 命令 #e.g. #help cd</description>
+    </item>
+    
+    <item>
+      <title>Linux运行级别</title>
+      <link>https://uncletrump.github.io/2019/5-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 17:11:00 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/5-linux/</guid>
+      <description>运行级别说明 0 关机 1 单用户 [类似安全模式， 这个模式可以帮助找回root密码] 2 多用户状态没有网络服务 3 多用户状态有网络服务 [使用最多] 4 系统</description>
+    </item>
+    
+    <item>
+      <title>Linux用户管理</title>
+      <link>https://uncletrump.github.io/2019/4-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 16:00:39 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/4-linux/</guid>
+      <description>在linux中，一个用户属于一个组。 创建一个用户后，默认会在/home/username创建一个和用户名相同的目录，该目录就是用户的家目录 当</description>
+    </item>
+    
+    <item>
+      <title>Linux用户登陆和注销</title>
+      <link>https://uncletrump.github.io/2019/3-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 15:43:27 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/3-linux/</guid>
+      <description>​ 登录时尽量少用root账户，因为它是系统管理员，最大权限，避免操作失误。可以用普通用户登录，用&amp;rdquo;su-用户名&amp;rdquo;命令</description>
+    </item>
+    
+    <item>
+      <title>Linux开机&amp;重启命令</title>
+      <link>https://uncletrump.github.io/2019/2-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 15:33:55 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/2-linux/</guid>
+      <description>shutdown -h now #立刻关机 shutdown -h 1 #一分钟后关机 shutdown -r now #现在重新启动计算机 halt #关机 reboot #现在重新启动计算机 sync #把内存数据同步到磁盘，关机或者重启前执行</description>
+    </item>
+    
+    <item>
+      <title>Linux目录结构</title>
+      <link>https://uncletrump.github.io/2019/1-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 12:33:43 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/1-linux/</guid>
+      <description>在Linux世界里，一切皆文件（即使是一个硬件设备，也是使用文本来标志） 启动系统时必须： /boot 存放启动linux时使用的一些核心文件，包括一些连</description>
+    </item>
+    
+    <item>
+      <title>虚拟机连接网络的三种模式</title>
+      <link>https://uncletrump.github.io/2019/00-linux/</link>
+      <pubDate>Sat, 09 Nov 2019 12:15:48 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2019/00-linux/</guid>
+      <description>桥接模式 用户在同一个网段，相互可以通讯 因为IP地址有限，可能造成IP地址冲突 Net（网络地址转换模式） 虚拟机不占用其它IP 内网的人不能和虚拟</description>
+    </item>
+    
+  </channel>
+</rss>
