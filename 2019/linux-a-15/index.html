@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/linux-a-14/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/linux-a-16/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/linux-a-15/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux进程管理 | Bing
+       
+  </title>
+  <meta name="title" content="Linux进程管理 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux进程管理",
+    "headline" : "Linux进程管理",
+    "description" : "查看系统执行的进程 ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。 可以不加任何参数. 字段 说明 PID 进程识别号 TTY 终端机号 TIME 此进程",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-17 15:01:23 \x2b0000 UTC",
+    "dateModified" : "2019-11-17 15:01:23 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/linux-a-15\/",
+    "wordCount" : "768",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux进程管理</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-17 itemprop="datePublished">November 17, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="查看系统执行的进程">查看系统执行的进程</h3>
+
+<p>ps命令是用来查看目前系统中，有哪些正在执行，以及它们执行的状况。 可以不加任何参数.</p>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>PID</td>
+<td>进程识别号</td>
+</tr>
+
+<tr>
+<td>TTY</td>
+<td>终端机号</td>
+</tr>
+
+<tr>
+<td>TIME</td>
+<td>此进程所消CPU时间</td>
+</tr>
+
+<tr>
+<td>CMD</td>
+<td>正在执行的命令或者进程</td>
+</tr>
+</tbody>
+</table>
+
+<p>ps -a：显示当前终端的所有进程信息</p>
+
+<p>ps -u：以用户的格式显示进程信息</p>
+
+<p>ps -x：显示后台进程运行的参数</p>
+
+<pre><code class="language-shell">#ps详解
+指令:ps –aux|grep xxx，比如我看看有没有xxx服务
+#指令说明
+# System V展示风格
+# USER:用户名称
+# PID:进程号
+# %CPU:进程占用CPU的百分比
+# %MEM:进程占用物理内存的百分比
+# VSZ:进程占用的虚拟内存大小(单位:KB)
+# RSS:进程占用的物理内存大小(单位:KB)
+# TT:终端名称,缩写 .
+# STAT:进程状态，其中S-睡眠，s-表示该进程是会话的先导进程，N-表示进程拥有比普通 优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止等等
+# STARTED:进程的启动时间
+# TIME:CPU时间，即进程使用CPU的总时间
+# COMMAND:启动进程所用的命令和参数，如果过长会被截断显示
+</code></pre>
+
+<h4 id="以全格式显示当前所有的进程-查看进程的父进程">以全格式显示当前所有的进程，查看进程的父进程。</h4>
+
+<pre><code class="language-shell">ps -ef
+-e #显示所有进程
+-f #全格式
+
+# 是BSD风格
+# UID:用户ID
+# PID:进程ID
+# PPID:父进程ID
+# C:CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，
+执行优先级会降低;数值越小，表明进程是I/O密集型运算，执行优先级会提高
+# STIME:进程启动的时间
+# TTY:完整的终端名称
+# TIME:CPU时间
+# CMD:启动进程所用的命令和参数
+</code></pre>
+
+<h3 id="终止进程">终止进程</h3>
+
+<pre><code class="language-shell">kill [选项] 进程号 #通过进程号杀死进程
+killall 进程名称 #通过进程名称杀死进程，也支持通配符，这在系统因负 载过大而变得很慢时很有用
+常用选项
+# -9 表示强迫进程立即停止
+</code></pre>
+
+<h3 id="查看进程树">查看进程树</h3>
+
+<pre><code class="language-shell">pstree [选项]
+-p #显示进程PID
+-u #显示进程的所属用户
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/linux-a-15/>https://uncletrump.github.io/2019/linux-a-15/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-14/" class="prev" rel="prev" title="Linux网络配置"><i class="iconfont icon-left"></i>&nbsp;Linux网络配置</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-16/" class="next" rel="next" title="Linux服务管理">Linux服务管理&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/linux-a-10/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/linux-a-12/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/linux-a-11/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux组管理和权限管理 | Bing
+       
+  </title>
+  <meta name="title" content="Linux组管理和权限管理 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux组管理和权限管理",
+    "headline" : "Linux组管理和权限管理",
+    "description" : "在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。 文件\/目录的所有者 一般为文件的",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-10 09:56:52 \x2b0000 UTC",
+    "dateModified" : "2019-11-10 09:56:52 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/linux-a-11\/",
+    "wordCount" : "618",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux组管理和权限管理</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-10 itemprop="datePublished">November 10, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>在linux中的每个用户必须属于一个组，不能独立于组外。在linux中每个文件有所有者、所在组、其它组的概念。</p>
+
+<h3 id="文件-目录的所有者">文件/目录的所有者</h3>
+
+<p>一般为文件的创建者,谁创建了该文件，就自然的成为该文件的所有者。</p>
+
+<h4 id="查看文件的所有者">查看文件的所有者</h4>
+
+<pre><code class="language-shell">ls -ahl
+</code></pre>
+
+<h4 id="修改文件所有者">修改文件所有者</h4>
+
+<pre><code class="language-shell">chown username filename
+#chown -R user dd/ 递归修改dd目录下的文件所有者为user
+</code></pre>
+
+<h3 id="文件-目录的所在组">文件/目录的所在组</h3>
+
+<h4 id="修改文件所在组">修改文件所在组</h4>
+
+<pre><code class="language-shell">chgrp 组名 文件名
+</code></pre>
+
+<h4 id="改变用户所在组">改变用户所在组</h4>
+
+<pre><code class="language-shell"> usermod   –g   组名  用户名
+ 
+ usermod   –d   目录名  用户名  #改变该用户登陆的初始目录
+</code></pre>
+
+<h3 id="权限的基本介绍">权限的基本介绍</h3>
+
+<pre><code class="language-shell">#e.g.
+-rwxr-xr-x   1 root root    0 Nov  9 15:24 .dockerenv
+#第0位表示文件类型
+	#d 目录
+	#- 普通文件
+	#l 链接文件
+	#c 字符设备（键盘，鼠标）
+	#b 块文件，硬盘
+#第1-3位表示文件所有者拥有该文件的权限
+#第4-6位表示所属组拥有该文件的权限
+#第7-9位表示起它组拥有的权限
+
+# 1 如果是文件，表示硬链接的数，如果是目录，表示该目录的子目录个数
+# 0 表示文件的大小，如果是目录表示4096
+# rwx可以用数字表示 r=4 w=2 x=1 rwx=4+2+1=7
+</code></pre>
+
+<p><strong>rwx作用到文件</strong></p>
+
+<p>r：可以读取，查看</p>
+
+<p>w：可以修改，但是不代表可以删除文件，删除文件的前提是对该文件所在的目录有写权限，才能删除文件</p>
+
+<p>x：代表可以被执行（execute）</p>
+
+<p><strong>rwx作用到目录</strong></p>
+
+<p>r：可以被读取，ls查看目录内容</p>
+
+<p>w：可以修改，目录内创建，删除，重命名目录</p>
+
+<p>x：可以进入该目录（execute）</p>
+
+<h3 id="修改权限chmod">修改权限chmod</h3>
+
+<p>使用+ - =变更权限</p>
+
+<ul>
+<li>u：所有者</li>
+<li>g：所有组</li>
+<li>o：其他人</li>
+
+<li><p>a：所有人（u，g，o的总和）</p>
+
+<pre><code class="language-shell">chmod u=rwx,g=rx,o=x 	文件目录名
+chmod o+w 文件目录名
+chmod a-x 文件目录名
+chmod 777 文件目录名
+</code></pre></li>
+</ul>
+
+<hr />
+
+<p>相关链接</p>
+
+<p>🔗<a href="/2019/linux-a-4/" rel="nofollow noreferrer" target="_blank">Linux用户管理</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/linux-a-11/>https://uncletrump.github.io/2019/linux-a-11/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-10/" class="prev" rel="prev" title="Linux压缩和解压类"><i class="iconfont icon-left"></i>&nbsp;Linux压缩和解压类</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-12/" class="next" rel="next" title="Linux定时调度任务">Linux定时调度任务&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

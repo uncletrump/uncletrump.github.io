@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/linux-a-8/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/linux-a-10/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/linux-a-9/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux搜索查找类 | Bing
+       
+  </title>
+  <meta name="title" content="Linux搜索查找类 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux搜索查找类",
+    "headline" : "Linux搜索查找类",
+    "description" : "find指令 find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。 find [搜索范围] [选项] 选项 功能 -name",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-10 08:51:55 \x2b0000 UTC",
+    "dateModified" : "2019-11-10 08:51:55 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/linux-a-9\/",
+    "wordCount" : "524",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux搜索查找类</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-10 itemprop="datePublished">November 10, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h4 id="find指令">find指令</h4>
+
+<p>find指令将从指定目录向下递归地遍历其各个子目录，将满足条件的文件或者目录显示在终端。</p>
+
+<pre><code class="language-shell">find [搜索范围] [选项]
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-name&lt;查询方式&gt;</td>
+<td>按照指定的文件名查找文件</td>
+</tr>
+
+<tr>
+<td>-user&lt;用户名&gt;</td>
+<td>按照指定的用户名查找所有文件</td>
+</tr>
+
+<tr>
+<td>-size&lt;文件大小&gt;</td>
+<td>按照指定的文件大小查找文件</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-shell">#e.g.
+find /home -name hello.txt #查找home目录下名字为hello.txt的文件
+find /opt -user nobody #查找/opt目录下，用户名称为nobody用户下的所有文件
+find / -size +10M #查找linux系统下大于10M的文件（+n大于 -n小于 n等于）
+</code></pre>
+
+<h4 id="locate">locate</h4>
+
+<p>locate指令可以快速定位文件路径。locate指令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位给定的文件。Locate指令无需遍历整个文件系统，查询速度较快。为了保证查询结果的准确度，管理员必须定期更新locate时刻。</p>
+
+<pre><code class="language-shell">locate filename
+</code></pre>
+
+<p>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。</p>
+
+<pre><code class="language-shell">#e.g.
+updatedb
+locate hello.txt
+</code></pre>
+
+<h4 id="grep-和-管道符号">grep 和 管道符号 ｜</h4>
+
+<p>grep 过滤查找 ， 管道符，“|”，表示将前一个命令的处理结果输出传递给后面的命令处理。</p>
+
+<pre><code class="language-shell">grep [选项] 查找内容 源文件
+	-n #显示匹配行及行号
+	-i #忽略大小写
+	
+#e.g.
+cat hello.txt | grep -ni yes
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/linux-a-9/>https://uncletrump.github.io/2019/linux-a-9/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-8/" class="prev" rel="prev" title="Linux时间日期类"><i class="iconfont icon-left"></i>&nbsp;Linux时间日期类</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-10/" class="next" rel="next" title="Linux压缩和解压类">Linux压缩和解压类&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

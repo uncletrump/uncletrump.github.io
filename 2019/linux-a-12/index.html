@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2019/linux-a-11/" />
+  <link rel="next" href="https://uncletrump.github.io/2019/linux-a-13/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2019/linux-a-12/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Linux定时调度任务 | Bing
+       
+  </title>
+  <meta name="title" content="Linux定时调度任务 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Linux定时调度任务",
+    "headline" : "Linux定时调度任务",
+    "description" : "crond任务调度 crontab进行定时任务设置 crontab [options] -e 设置定时任务 -a 编辑crontab定时任务 -l 查询crontab任务 -r 删除当前用户所有的c",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-11-16 09:32:26 \x2b0000 UTC",
+    "dateModified" : "2019-11-16 09:32:26 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2019\/linux-a-12\/",
+    "wordCount" : "237",
+    "keywords" : [ "linux", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Linux定时调度任务</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-11-16 itemprop="datePublished">November 16, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/linux/"> linux </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="crond任务调度">crond任务调度</h3>
+
+<p>crontab进行定时任务设置</p>
+
+<pre><code class="language-shell">crontab [options]
+-e 设置定时任务
+-a 编辑crontab定时任务
+-l 查询crontab任务
+-r 删除当前用户所有的crontab任务
+</code></pre>
+
+<h4 id="e-g">e.g.</h4>
+
+<pre><code class="language-shell">*/1**** ls -l /etc &gt; /tmp/to.txt
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>含义</th>
+<th>范围</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>第一个*</td>
+<td>一小时中的第几分钟</td>
+<td>0-59</td>
+</tr>
+
+<tr>
+<td>第二个*</td>
+<td>一天当中的第几小时</td>
+<td>0-23</td>
+</tr>
+
+<tr>
+<td>第三个*</td>
+<td>一个月中的第几天</td>
+<td>1-31</td>
+</tr>
+
+<tr>
+<td>第四个*</td>
+<td>一年当中的第几个月</td>
+<td>1-12</td>
+</tr>
+
+<tr>
+<td>第五个*</td>
+<td>一周当中的星期几</td>
+<td>0-7（0和7都都代表星期日）</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th>特殊符号</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>*</td>
+<td>代表任何时间</td>
+</tr>
+
+<tr>
+<td>,</td>
+<td>代表不连续的时间。0 8,10,12 * * *</td>
+</tr>
+
+<tr>
+<td>-</td>
+<td>代表连续的时间范围。0 5 * * 1-6</td>
+</tr>
+
+<tr>
+<td>*/n</td>
+<td>代表每隔多久执行一次。*/10 * * * *</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2019/linux-a-12/>https://uncletrump.github.io/2019/linux-a-12/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-11/" class="prev" rel="prev" title="Linux组管理和权限管理"><i class="iconfont icon-left"></i>&nbsp;Linux组管理和权限管理</a>
+         
+        
+        <a href="https://uncletrump.github.io/2019/linux-a-13/" class="next" rel="next" title="Linux磁盘分区挂载">Linux磁盘分区挂载&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

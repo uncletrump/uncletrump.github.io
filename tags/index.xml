@@ -5,10 +5,28 @@
     <link>https://uncletrump.github.io/tags/</link>
     <description>Recent content in Tags on Bing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 24 Nov 2019 17:15:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 10:48:23 +0000</lastBuildDate>
     
 	<atom:link href="https://uncletrump.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>spring4</title>
+      <link>https://uncletrump.github.io/tags/spring4/</link>
+      <pubDate>Sat, 11 Jan 2020 10:48:23 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/tags/spring4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux基础</title>
+      <link>https://uncletrump.github.io/tags/linux%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 10 Jan 2020 18:17:21 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/tags/linux%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>linux</title>
@@ -25,15 +43,6 @@
       <pubDate>Sat, 09 Nov 2019 12:15:48 +0000</pubDate>
       
       <guid>https://uncletrump.github.io/tags/vmware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>springboot</title>
-      <link>https://uncletrump.github.io/tags/springboot/</link>
-      <pubDate>Sun, 13 Oct 2019 23:28:27 +0900</pubDate>
-      
-      <guid>https://uncletrump.github.io/tags/springboot/</guid>
       <description></description>
     </item>
     
