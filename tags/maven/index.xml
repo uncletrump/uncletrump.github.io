@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on Bing</title>
+    <link>https://uncletrump.github.io/tags/maven/</link>
+    <description>Recent content in maven on Bing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Feb 2020 14:55:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://uncletrump.github.io/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maven命令</title>
+      <link>https://uncletrump.github.io/2020/maven-a/</link>
+      <pubDate>Wed, 26 Feb 2020 14:55:44 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/maven-a/</guid>
+      <description>Maven Maven是一款服务于Java平台的自动化构建工具。 Maven的构建过程 清理:删除以前的编译结果，为重新编译做好准备。 编译:将 Java 源程序编译</description>
+    </item>
+    
+  </channel>
+</rss>

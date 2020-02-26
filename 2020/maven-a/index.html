@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://uncletrump.github.io/2020/maven-a/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Maven命令 | Bing
+       
+  </title>
+  <meta name="title" content="Maven命令 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Maven命令",
+    "headline" : "Maven命令",
+    "description" : "Maven Maven是一款服务于Java平台的自动化构建工具。 Maven的构建过程 清理:删除以前的编译结果，为重新编译做好准备。 编译:将 Java 源程序编译",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-26 14:55:44 \x2b0000 UTC",
+    "dateModified" : "2020-02-26 14:55:44 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/maven-a\/",
+    "wordCount" : "2277",
+    "keywords" : [ "maven", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Maven命令</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-26 itemprop="datePublished">February 26, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/maven/"> maven </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h3 id="maven">Maven</h3>
+
+<p>Maven是一款服务于Java平台的自动化构建工具。</p>
+
+<h3 id="maven的构建过程">Maven的构建过程</h3>
+
+<ol>
+<li>清理:删除以前的编译结果，为重新编译做好准备。</li>
+<li>编译:将 Java 源程序编译为字节码文件。</li>
+<li>测试:针对项目中的关键点进行测试，确保项目在迭代开发过程中关键点的正确性。</li>
+<li>报告:在每一次测试后以标准的格式记录和展示测试结果。</li>
+<li>打包:将一个包含诸多文件的工程封装为一个压缩文件用于安装或部署。Java 工程对应 jar 包，Web 工程对应 war 包。</li>
+<li>安装:在 Maven 环境下特指将打包的结果——jar 包或 war 包安装到本地仓库中。</li>
+<li>部署:将打包的结果部署到远程仓库或将 war 包部署到服务器上运行。</li>
+</ol>
+
+<h3 id="maven的目录结构">Maven的目录结构</h3>
+
+<pre><code class="language-html">根目录：工程名
+src目录：源码
+pom.xml：Maven工程的核心配置文件
+main：目录主程序目录
+test:存放测试程序
+java:存放Java源文件
+resources：存放框架或其他工具的配置文件
+target：编译结果
+</code></pre>
+
+<h3 id="maven常用命令">Maven常用命令</h3>
+
+<pre><code class="language-html">mvn clean清理
+mvn compile编译主程序
+mvn test-compile编译测试程序
+mvn test执行测试
+mvn package打包
+</code></pre>
+
+<h3 id="pom">POM</h3>
+
+<p>Project Object Model:项目对象模型。将 Java 工程的相关信息封装为对象作为便于操作和管理的模型。Maven 工程的核心配置。</p>
+
+<h3 id="maven坐标">Maven坐标</h3>
+
+<p>使用如下三个向量在 Maven 的仓库中唯一的确定一个 Maven 工程。</p>
+
+<ul>
+<li>groupid:公司或组织的域名倒序+当前项目名称</li>
+<li>artifactId:当前项目的模块名称</li>
+<li>version:当前模块的版本</li>
+</ul>
+
+<h4 id="如何通过坐标到仓库中查找jar包">如何通过坐标到仓库中查找jar包</h4>
+
+<p>将 gav 三个向量连起来</p>
+
+<h3 id="maven仓库">Maven仓库</h3>
+
+<ul>
+<li>Maven自身所需要的插件</li>
+<li>第三方工具或工具的jar包</li>
+<li>自身开发的Maven工程(mvn install)</li>
+</ul>
+
+<h3 id="maven的生命周期">Maven的生命周期</h3>
+
+<p>Maven 有三套相互独立的生命周期，分别是:</p>
+
+<ol>
+<li>Clean Lifecycle 在进行真正的构建之前进行一些清理工作。</li>
+<li>Default Lifecycle 构建的核心部分，编译，测试，打包，安装，部署等等。</li>
+<li>Site Lifecycle 生成项目报告，站点，发布站点。</li>
+</ol>
+
+<p>它们是相互独立的，你可以仅仅调用 clean 来清理工作目录，仅仅调用 site 来生成站点。当然你也可以 直接运行 mvn clean install site 运行所有这三套生命周期。</p>
+
+<p>每套生命周期都由一组阶段(Phase)组成，我们平时在命令行输入的命令总会对应于一个特定的阶段。比 如，运行 mvn clean，这个 clean 是 Clean 生命周期的一个阶段。有 Clean 生命周期，也有 clean 阶段。</p>
+
+<h4 id="clean-生命周期">Clean 生命周期</h4>
+
+<ol>
+<li>pre-clean 执行一些需要在 clean 之前完成的工作</li>
+<li>clean 移除所有上一次构建生成的文件</li>
+<li>post-clean 执行一些需要在 clean 之后立刻完成的工作</li>
+</ol>
+
+<h4 id="site-生命周期">Site 生命周期</h4>
+
+<ol>
+<li>pre-site 执行一些需要在生成站点文档之前完成的工作</li>
+<li>site 生成项目的站点文档</li>
+<li>post-site 执行一些需要在生成站点文档之后完成的工作，并且为部署做准备</li>
+<li>site-deploy 将生成的站点文档部署到特定的服务器上</li>
+</ol>
+
+<h4 id="default-生命周期">Default 生命周期</h4>
+
+<p>Default 生命周期是 Maven 生命周期中最重要的一个，绝大部分工作都发生在这个生命周期中。</p>
+
+<pre><code class="language-html">validate
+generate-sources
+process-sources
+generate-resources
+process-resources 复制并处理资源文件，至目标目录，准备打包。
+compile 编译项目的源代码。
+process-classes
+generate-test-sources
+process-test-sources
+generate-test-resources
+process-test-resources 复制并处理资源文件，至目标测试目录。
+test-compile 编译测试源代码。
+process-test-classes
+test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。
+prepare-package
+package 接受编译好的代码，打包成可发布的格式，如 JAR。
+pre-integration-test
+integration-test
+post-integration-test
+verify
+install 将包安装至本地仓库，以让其它项目依赖。
+deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享或部署到服务器上运行。
+</code></pre>
+
+<p><strong>运行任何一个阶段的时候，它前面的所有阶段都会被运行</strong></p>
+
+<h3 id="maven依赖">Maven依赖</h3>
+
+<h4 id="maven依赖的有效性">Maven依赖的有效性</h4>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">compile</th>
+<th align="center">test</th>
+<th align="center">provided</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">主程序</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">√</td>
+</tr>
+
+<tr>
+<td align="center">测试程序</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+
+<tr>
+<td align="center">参与部署</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="maven依赖的传递性">Maven依赖的传递性</h4>
+
+<p>A 依赖 B，B 依赖 C，A 能否使用 C ？</p>
+
+<p>B 依赖 C 的范围是 compile，则可用。</p>
+
+<h4 id="依赖的排除">依赖的排除</h4>
+
+<p>如果我们在当前工程中引入了一个依赖是 A，而 A 又依赖了 B，那么 Maven 会自动将 A 依赖的 B 引入当 前工程，但是个别情况下 B 有可能是一个不稳定版，或对当前工程有不良影响。这时我们可以在引入 A 的时 候将B排除。</p>
+
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;XXX&lt;/groupId&gt;
+  &lt;artifactId&gt;XXX&lt;/artifactId&gt;
+  &lt;version&gt;XXX&lt;/version&gt;
+  &lt;type&gt;jar&lt;/type&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+	&lt;exclusions&gt;
+		&lt;exclusion&gt;
+      &lt;groupId&gt;XXX&lt;/groupId&gt;
+      &lt;artifactId&gt;XXX&lt;/artifactId&gt;
+    &lt;/exclusion&gt;
+   &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<h4 id="解决jar包冲突">解决jar包冲突</h4>
+
+<ol>
+<li>路径最短者优先</li>
+<li>路径相同时先声明者优先(“声明”是指dependency标签配置的先后顺序)</li>
+</ol>
+
+<h3 id="统一声明版本号">统一声明版本号</h3>
+
+<pre><code class="language-xml">&lt;properties&gt; 		  
+  &lt;spring.version&gt;4.1.1.RELEASE&lt;/spring.version&gt;
+&lt;/properties&gt;
+&lt;!-- spring.version是自定义标签 --&gt;
+
+&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;version&gt;${spring.version}&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;!-- 其他用法 --&gt;
+&lt;properties&gt;
+  &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+&lt;/properties&gt;
+</code></pre>
+
+<h3 id="maven继承">Maven继承</h3>
+
+<p>父工程POM文件</p>
+
+<pre><code class="language-xml">  &lt;modelVersion&gt;XXX&lt;/modelVersion&gt;
+  &lt;groupId&gt;XXX&lt;/groupId&gt;
+  &lt;artifactId&gt;Parent&lt;/artifactId&gt;
+  &lt;version&gt;XXX&lt;/version&gt;
+  &lt;packaging&gt;pom&lt;/packaging&gt;
+&lt;!-- 指定从当前子工程的pom.xml文件出发，查找父工程的pom.xml的路径 --&gt;
+&lt;relativePath&gt;../Parent/pom.xml&lt;/relativePath&gt;
+
+&lt;dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.9&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+   &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</code></pre>
+
+<p>子工程POM文件</p>
+
+<pre><code class="language-xml">&lt;modelVersion&gt;XXX&lt;/modelVersion&gt;
+&lt;artifactId&gt;XXX&lt;/artifactId&gt;
+&lt;parent&gt;
+  &lt;groupId&gt;XXX&lt;/groupId&gt;
+  &lt;artifactId&gt;Parent&lt;/artifactId&gt;
+  &lt;version&gt;XXX&lt;/version&gt;
+  &lt;!-- 指定从当前子工程的pom.xml文件出发，查找父工程的pom.xml的路径 --&gt;
+  &lt;relativePath&gt;../Parent/pom.xml&lt;/relativePath&gt;
+&lt;/parent&gt;  
+&lt;dependencies&gt;
+    &lt;dependency&gt;  
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;/dependency&gt;  
+&lt;/dependencies&gt;
+</code></pre>
+
+<h3 id="maven聚合">Maven聚合</h3>
+
+<p>将多个工程拆分为模块后，需要手动(按照依赖顺序)逐个安装到仓库后依赖才能够生效。修改源码后也需要逐个手动进行 clean 操作。而使用了聚合之后就可以批量进行 Maven 工程的安装、清理工作。</p>
+
+<h3 id="配置聚合">配置聚合</h3>
+
+<p>在总的聚合工程中使用 modules/module 标签组合，指定模块工程的相对路径即可</p>
+
+<pre><code class="language-xml">&lt;modules&gt;
+  &lt;module&gt;../XXX&lt;/module&gt;
+  &lt;module&gt;../XXX&lt;/module&gt;
+  &lt;module&gt;../XXX&lt;/module&gt;
+&lt;/modules&gt;
+&lt;!-- 配置与依赖顺序无关，在配置聚合工程的POM文件上执行mvn intall即可(一般在parent POM文件) --&gt;
+</code></pre>
+
+<h3 id="maven自动部署-不推荐">Maven自动部署(不推荐)</h3>
+
+<pre><code class="language-xml">&lt;build&gt;
+	&lt;finalName&gt;WebProject&lt;/finalName&gt;&lt;!--项目的最终名字--&gt;  
+  &lt;plugins&gt;
+  	&lt;plugin&gt;  
+    	&lt;!--启动servlet容器的插件--&gt;
+     	&lt;groupId&gt;org.codehaus.cargo&lt;/groupId&gt;
+     	&lt;artifactId&gt;cargo-maven2-plugin&lt;/artifactId&gt;
+     	&lt;version&gt;1.2.3&lt;/version&gt;
+     	&lt;!--对插件进行的配置--&gt;
+     	&lt;configuration&gt;
+      	&lt;container&gt;&lt;!--配置当前系统中容器的位置--&gt;
+        	&lt;containerId&gt;tomcat7&lt;/containerId&gt;
+          &lt;home&gt;D:\apache-tomcat-7&lt;/home&gt;
+        &lt;/container&gt; 
+        &lt;configuration&gt;
+        	&lt;type&gt;existing&lt;/type&gt;
+          &lt;home&gt;D:\apache-tomcat-7&lt;/home&gt;
+          &lt;!-- 如果Tomcat端口为默认值8080则不必设置该属性 --&gt;
+          &lt;properties&gt;
+          	&lt;cargo.servlet.port&gt;8989&lt;/cargo.servlet.port&gt;
+          &lt;/properties&gt; 
+        &lt;/configuration&gt;
+       &lt;/configuration&gt;
+       &lt;executions&gt;
+       	&lt;execution&gt;&lt;!--配置插件在什么情况下执行--&gt;    
+    			&lt;id&gt;cargo-run&lt;/id&gt;
+          &lt;phase&gt;install&lt;/phase&gt;&lt;!--生命周期的阶段--&gt; 
+          &lt;goals&gt;&lt;!--插件的目标--&gt;
+          	&lt;goal&gt;run&lt;/goal&gt; 
+          &lt;/goals&gt;
+        &lt;/execution&gt; 
+       &lt;/executions&gt;
+    &lt;/plugin&gt; 
+ &lt;/plugins&gt;       
+&lt;/build&gt;          
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2020/maven-a/>https://uncletrump.github.io/2020/maven-a/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/maven/">
+                    #maven</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
