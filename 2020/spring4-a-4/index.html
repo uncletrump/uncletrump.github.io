@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-3/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-5/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-4/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Bean之间的相互引用 | Bing
+       
+  </title>
+  <meta name="title" content="Bean之间的相互引用 | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "Bean之间的相互引用",
+    "headline" : "Bean之间的相互引用",
+    "description" : "组成应用程序的 Bean 经常需要相互协作以完成应用程序的功能. 要使 Bean 能够相互访问, 就必须在 Bean 配置文件中指定对 Bean 的引用。 在 Bean 的配置文件中, 可以通过 元素",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-01 15:15:35 \x2b0000 UTC",
+    "dateModified" : "2020-03-01 15:15:35 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-4\/",
+    "wordCount" : "1011",
+    "keywords" : [ "spring4", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Bean之间的相互引用</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-01 itemprop="datePublished">March 1, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/spring/"> spring </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>组成应用程序的 Bean 经常需要相互协作以完成应用程序的功能. 要使 Bean 能够相互访问, 就必须在 Bean 配置文件中指定对 Bean 的引用。</p>
+
+<p>在 Bean 的配置文件中, 可以通过 <ref> 元素或 ref  属性为 Bean 的属性或构造器参数指定对 Bean 的引用。</p>
+
+<p>也可以在属性或构造器里包含 Bean 的声明, 这样的 Bean 称为内部 Bean。</p>
+
+<p>JavaBean</p>
+
+<pre><code class="language-java">public class Teacher {
+
+    private String name;
+
+    private Integer age;
+
+    private Student student;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Teacher() {
+    }
+
+    public Teacher(String name, Integer age, Student student) {
+        this.name = name;
+        this.age = age;
+        this.student = student;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Teacher{&quot; +
+                &quot;name='&quot; + name + '\'' +
+                &quot;, age=&quot; + age +
+                &quot;, student=&quot; + student +
+                '}';
+    }
+}
+
+
+public class TestMain {
+    public static void main(String[] args) {
+
+        // 创建Spring IOC容器，并会调用构造方法，通过set方法对属性进行赋值
+        ApplicationContext ac=new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+
+        // 从容器中获取bean对象
+        Object teacher = ac.getBean(&quot;teacher&quot;);
+        System.out.println(teacher.toString());
+
+    }
+}
+</code></pre>
+
+<p>applicationContext.xml</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!--类型和索引可以混合使用--&gt;
+    &lt;!--按类型匹配--&gt;
+    &lt;bean id=&quot;student&quot; class=&quot;org.ouhei.spring.beans.Student&quot;&gt;
+        &lt;constructor-arg value=&quot;小明&quot; type=&quot;java.lang.String&quot;/&gt;
+        &lt;constructor-arg value=&quot;13014&quot; type=&quot;java.lang.Integer&quot;/&gt;
+        &lt;constructor-arg value=&quot;521.34&quot; type=&quot;java.lang.Double&quot;/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.beans.Teacher&quot;&gt;
+        &lt;property name=&quot;name&quot; value=&quot;葵司&quot;/&gt;
+        &lt;property name=&quot;age&quot; value=&quot;29&quot;/&gt;
+        &lt;property name=&quot;student&quot; ref=&quot;student&quot;/&gt;
+      &lt;!--另一种写法--&gt;
+    	&lt;!--&lt;property name=&quot;student&quot;&gt;
+        	&lt;ref bean=&quot;student&quot;/&gt;
+    	&lt;/property&gt;--&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<h4 id="内部bean的写法">内部bean的写法</h4>
+
+<p>当 Bean 实例仅仅给一个特定的属性使用时, 可以将其声明为内部 Bean. 内部 Bean 声明直接包含在 <property> 或 <constructor-arg> 元素里, 不需要设置任何 id 或 name 属性。</p>
+
+<p>内部 Bean 不能使用在任何其他地方</p>
+
+<pre><code class="language-xml">&lt;!--内部bean的写法，不能够被外部引用--&gt;
+    &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.beans.Teacher&quot;&gt;
+        &lt;property name=&quot;name&quot; value=&quot;葵司&quot;/&gt;
+        &lt;property name=&quot;age&quot; value=&quot;28&quot;/&gt;
+        &lt;property name=&quot;student&quot;&gt;
+            &lt;bean class=&quot;org.ouhei.spring.beans.Student&quot;&gt;
+                &lt;property name=&quot;name&quot; value=&quot;小明&quot;/&gt;
+                &lt;property name=&quot;num&quot; value=&quot;13014&quot;/&gt;
+                &lt;property name=&quot;point&quot; value=&quot;596&quot;/&gt;
+            &lt;/bean&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+</code></pre>
+
+<h4 id="null值引用">null值引用</h4>
+
+<p>可以使用专用的 <null/> 元素标签为 Bean 的字符串或其它对象类型的属性注入 null 值。</p>
+
+<pre><code class="language-xml"> &lt;!--null值引用--&gt;
+    &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.beans.Teacher&quot;&gt;
+      	&lt;constructor-arg value=&quot;葵司&quot;&gt;&lt;/constructor-arg&gt;
+        &lt;constructor-arg value=&quot;28&quot;&gt;&lt;/constructor-arg&gt;
+      	&lt;constructor-arg&gt;&lt;null/&gt;&lt;/constructor-arg&gt;
+    &lt;/bean&gt;
+</code></pre>
+
+<h4 id="级连赋值">级连赋值</h4>
+
+<p>和 Struts、Hiberante 等框架一样，Spring 支持级联属性的配置。</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+  &lt;bean id=&quot;student&quot; class=&quot;org.ouhei.spring.beans.Student&quot;&gt;
+      &lt;constructor-arg index=&quot;0&quot;&gt;
+          &lt;value&gt;&lt;![CDATA[&lt;小红&gt;]]&gt;&lt;/value&gt;
+      &lt;/constructor-arg&gt;
+      &lt;constructor-arg value=&quot;13015&quot; index=&quot;1&quot;/&gt;
+      &lt;constructor-arg type=&quot;java.lang.Double&quot;&gt;
+          &lt;value&gt;692.34&lt;/value&gt;
+      &lt;/constructor-arg&gt;
+  &lt;/bean&gt;
+
+  &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.beans.Teacher&quot;&gt;
+    &lt;constructor-arg value=&quot;明日花绮罗&quot;/&gt;
+    &lt;constructor-arg value=&quot;30&quot;/&gt;
+    &lt;constructor-arg ref=&quot;student&quot;/&gt;&lt;!--次ref不能缺少--&gt;
+    &lt;property name=&quot;student.name&quot; value=&quot;小明&quot;/&gt;
+    &lt;property name=&quot;student.num&quot; value=&quot;13014&quot;/&gt;
+    &lt;property name=&quot;student.point&quot; value=&quot;100&quot;/&gt;
+    &lt;!--会把上面对象的值覆盖掉--&gt;
+  &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-4/>https://uncletrump.github.io/2020/spring4-a-4/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/spring4/">
+                    #spring4</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2020/spring4-a-3/" class="prev" rel="prev" title="依赖注入的方式"><i class="iconfont icon-left"></i>&nbsp;依赖注入的方式</a>
+         
+        
+        <a href="https://uncletrump.github.io/2020/spring4-a-5/" class="next" rel="next" title="集合属性list">集合属性list&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

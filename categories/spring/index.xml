@@ -5,10 +5,73 @@
     <link>https://uncletrump.github.io/categories/spring/</link>
     <description>Recent content in spring on Bing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 11 Jan 2020 10:48:23 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Mar 2020 16:33:47 +0000</lastBuildDate>
     
 	<atom:link href="https://uncletrump.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>p名称空间</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-8/</link>
+      <pubDate>Sun, 01 Mar 2020 16:33:47 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>utility scheme 定义集合</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-7/</link>
+      <pubDate>Sun, 01 Mar 2020 16:13:52 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-7/</guid>
+      <description>使用基本的集合标签定义集合时, 不能将集合作为独立的 Bean 定义, 导致其他 Bean 无法引用该集合, 所以无法在不同 Bean 之间共享集合. 可以使用 util schema 里的集合标签定</description>
+    </item>
+    
+    <item>
+      <title>集合属性map</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-6/</link>
+      <pubDate>Sun, 01 Mar 2020 15:57:38 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-6/</guid>
+      <description>集合属性(map) Java.util.Map 通过 标签定义, 标签里可以使用多个 作为子标签. 每个条目包含一个键和一个值. 必须在 标签里定义键 因为键和值的类型没有限制, 所以</description>
+    </item>
+    
+    <item>
+      <title>集合属性list</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-5/</link>
+      <pubDate>Sun, 01 Mar 2020 15:57:35 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-5/</guid>
+      <description>集合属性(list) 在 Spring中可以通过一组内置的 xml 标签(例如: , 或 ) 来配置集合属性。 配置 java.util.List 类型的属性, 需要指定 标签, 在标签里包含一些元</description>
+    </item>
+    
+    <item>
+      <title>Bean之间的相互引用</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-4/</link>
+      <pubDate>Sun, 01 Mar 2020 15:15:35 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-4/</guid>
+      <description>组成应用程序的 Bean 经常需要相互协作以完成应用程序的功能. 要使 Bean 能够相互访问, 就必须在 Bean 配置文件中指定对 Bean 的引用。 在 Bean 的配置文件中, 可以通过 元素</description>
+    </item>
+    
+    <item>
+      <title>依赖注入的方式</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-3/</link>
+      <pubDate>Sun, 01 Mar 2020 14:00:49 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-3/</guid>
+      <description>Spring 支持 3 种依赖注入的方式 属性注入(setter) 构造器注入 工厂方法注入（很少使用，不推荐） 属性注入 属性注入即通过 setter 方法注入Bean 的属性值或</description>
+    </item>
+    
+    <item>
+      <title>使用maven搭建spring开发环境</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-2/</link>
+      <pubDate>Sun, 01 Mar 2020 13:34:04 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-2/</guid>
+      <description>倒入spring核心jar包 spring-context spring-core spring-beans spring-expression 创建javabean public class HelloWord { private String name; public void setName(String name) { this.name = name; } public void hello() { System.out.println(&amp;quot;Hello&amp;quot; + name); } } 类路径下创建application</description>
+    </item>
     
     <item>
       <title>Spring简介</title>
@@ -17,6 +80,15 @@
       
       <guid>https://uncletrump.github.io/2020/spring4-a-1/</guid>
       <description>Spring简介 Spring是一个开源框架 Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJ</description>
+    </item>
+    
+    <item>
+      <title>Spring4教程</title>
+      <link>https://uncletrump.github.io/2020/spring4-a/</link>
+      <pubDate>Fri, 10 Jan 2020 19:26:42 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a/</guid>
+      <description>🔗Spring4官方文档 spring简介 使用maven搭建spring开发环境 依赖注入的方式 Bean之间的相互引用 集合属性list 集合属性m</description>
     </item>
     
   </channel>

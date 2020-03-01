@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a/" />
-  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-2/" />
-  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-1/" />
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-6/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-8/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-7/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Spring简介 | Bing
+           utility scheme 定义集合 | Bing
        
   </title>
-  <meta name="title" content="Spring简介 | Bing">
+  <meta name="title" content="utility scheme 定义集合 | Bing">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/uncletrump.github.io"
     },
     "articleSection" : "notes",
-    "name" : "Spring简介",
-    "headline" : "Spring简介",
-    "description" : "Spring简介 Spring是一个开源框架 Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJ",
+    "name" : "utility scheme 定义集合",
+    "headline" : "utility scheme 定义集合",
+    "description" : "使用基本的集合标签定义集合时, 不能将集合作为独立的 Bean 定义, 导致其他 Bean 无法引用该集合, 所以无法在不同 Bean 之间共享集合. 可以使用 util schema 里的集合标签定",
     "inLanguage" : "",
     "author" : "Bing",
     "creator" : "Bing",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Bing",
     "copyrightHolder" : "Bing",
     "copyrightYear" : "2020",
-    "datePublished": "2020-01-11 10:48:23 \x2b0000 UTC",
-    "dateModified" : "2020-01-11 10:48:23 \x2b0000 UTC",
-    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-1\/",
-    "wordCount" : "962",
+    "datePublished": "2020-03-01 16:13:52 \x2b0000 UTC",
+    "dateModified" : "2020-03-01 16:13:52 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-7\/",
+    "wordCount" : "143",
     "keywords" : [ "spring4", "Bing"]
 }
 </script>
@@ -120,11 +120,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Spring简介</h1>
+        <h1 class="post-title" itemprop="name headline">utility scheme 定义集合</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-01-11 itemprop="datePublished">January 11, 2020</time>
+                on <time datetime=2020-03-01 itemprop="datePublished">March 1, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -150,80 +150,21 @@
           
           
 
-          
+          <p>使用基本的集合标签定义集合时, 不能将集合作为独立的 Bean 定义, 导致其他 Bean 无法引用该集合, 所以无法在不同 Bean 之间共享集合.</p>
 
-<h3 id="spring简介">Spring简介</h3>
+<p>可以使用 util schema 里的集合标签定义独立的集合 Bean. 需要注意的是, 必须在 <beans> 根元素里添加 util schema 定义.</p>
 
-<ul>
-<li>Spring是一个开源框架</li>
-<li>Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能</li>
-<li>Spring是一个IOC(DI)和AOP容器框架</li>
-</ul>
+<pre><code class="language-xml">		&lt;util:list id=&quot;students&quot;&gt;
+        &lt;ref bean=&quot;student1&quot;/&gt;
+        &lt;ref bean=&quot;student2&quot;/&gt;
+    &lt;/util:list&gt;
 
-<h4 id="spring特点">Spring特点</h4>
-
-<ul>
-<li>轻量级
-
-<ul>
-<li>Spring是非侵入性的。基于Spring开发的应用中的对象可以不依赖于Spring的API</li>
-</ul></li>
-<li>依赖注入(DI&ndash;dependency injection、IOC)</li>
-<li>面向切面变成(AOP&ndash;aspect oriented programming)</li>
-<li>容器
-
-<ul>
-<li>Spring是一个容器，因为它包含并且管理应用对象的生命周期</li>
-</ul></li>
-<li>框架
-
-<ul>
-<li>Spring实现了使用简单的组件配置组合成一个复杂的应用。在Spring中可以使用XML和Java注解组合这些对象。</li>
-</ul></li>
-<li>一站式
-
-<ul>
-<li>在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库</li>
-</ul></li>
-</ul>
-
-<h4 id="ioc-和-di">IOC 和 DI</h4>
-
-<ul>
-<li>IOC(Inversion of Control)：其思想是<strong>反转资源获取的方向</strong>. 传统的资源查找方式要求组件向容器发起请求查找资源. 作为回应, 容器适时的返回资源. 而应用了 IOC 之后, 则是容器主动地将资源推送给它所管理的组件,组件所要做的仅是选择一种合适的方式来接受资源. 这种行为也被称为查找的被动形式</li>
-<li>DI(Dependency Injection) — IOC 的另一种表述方式：即组件以一些预先定义好的方式(例如: setter方法)接受来自如容器的资源注入.相对于 IOC 而言，这种表述更直接</li>
-</ul>
-
-<h4 id="spring容器">Spring容器</h4>
-
-<p>在 Spring IOC 容器读取 Bean 配置创建 Bean 实例之前, 必须对它进行实例化. 只有在容器实例化后, 才可以从 IOC 容器里获取 Bean 实例并使用。</p>
-
-<p>Spring 提供了两种类型的 IOC 容器实现.</p>
-
-<ul>
-<li>BeanFactory: IOC 容器的基本实现</li>
-<li>ApplicationContext: 提供了更多的高级特性. 是 BeanFactory 的子接口.</li>
-</ul>
-
-<p>BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身；ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合都直接使用 ApplicationContext 而非底层的 BeanFactory。无论使用何种方式, 配置文件时相同的。</p>
-
-<pre><code class="language-html">ApplicationContext 的主要实现类：
-ClassPathXmlApplicationContext：从类路径下加载配置文件
-FileSystemXmlApplicationContext: 从文件系统中加载配置文件
-
-ConfigurableApplicationContext 扩展于 ApplicationContext，新增加两个主要方法：refresh() 和 close()，让 ApplicationContext 具有启动、刷新和关闭上下文的能力。
-
-ApplicationContext 在初始化上下文时就实例化所有单例的Bean。
-
-WebApplicationContext 是专门为 WEB 应用而准备的，它允许从相对于 WEB 根目录的路径中完成初始化工作。
+    &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.collections.Teacher&quot;&gt;
+        &lt;property name=&quot;name&quot; value=&quot;天海翼&quot;/&gt;
+        &lt;property name=&quot;age&quot; value=&quot;31&quot;/&gt;
+        &lt;property name=&quot;students&quot; ref=&quot;students&quot;/&gt;
+    &lt;/bean&gt;
 </code></pre>
-
-<h4 id="bean的配置方式">Bean的配置方式</h4>
-
-<ul>
-<li>xml</li>
-<li>注解</li>
-</ul>
 
     </div>
 
@@ -238,7 +179,7 @@ WebApplicationContext 是专门为 WEB 应用而准备的，它允许从相对�
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://uncletrump.github.io/2020/spring4-a-1/>https://uncletrump.github.io/2020/spring4-a-1/</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-7/>https://uncletrump.github.io/2020/spring4-a-7/</span>
             </p>
             
             
@@ -263,10 +204,10 @@ WebApplicationContext 是专门为 WEB 应用而准备的，它允许从相对�
 
     <div class="post-nav">
         
-        <a href="https://uncletrump.github.io/2020/spring4-a/" class="prev" rel="prev" title="Spring4教程"><i class="iconfont icon-left"></i>&nbsp;Spring4教程</a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-6/" class="prev" rel="prev" title="集合属性map"><i class="iconfont icon-left"></i>&nbsp;集合属性map</a>
          
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-2/" class="next" rel="next" title="使用maven搭建spring开发环境">使用maven搭建spring开发环境&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-8/" class="next" rel="next" title="p名称空间">p名称空间&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
