@@ -11,12 +11,84 @@
     
     
     <item>
+      <title>静态工厂方法创建Bean</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-16/</link>
+      <pubDate>Sun, 08 Mar 2020 15:43:36 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-16/</guid>
+      <description>调用静态工厂方法创建 Bean是将对象创建的过程封装到静态方法中. 当客户端需要对象时, 只需要简单地调用静态方法, 而不同关心创建对象的细节. 要声</description>
+    </item>
+    
+    <item>
+      <title>Bean后置处理器</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-15/</link>
+      <pubDate>Sun, 08 Mar 2020 15:33:22 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-15/</guid>
+      <description>Bean 后置处理器允许在调用初始化方法前后对 Bean 进行额外的处理. Bean 后置处理器对 IOC 容器里的所有 Bean 实例逐一处理, 而非单一实例. 其典型应用是: 检查 Bean 属性的</description>
+    </item>
+    
+    <item>
+      <title>Bean的生命周期</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-14/</link>
+      <pubDate>Sun, 08 Mar 2020 13:09:52 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-14/</guid>
+      <description>Spring IOC 容器可以管理 Bean 的生命周期, Spring 允许在 Bean 生命周期的特定点执行定制的任务. Spring IOC 容器对 Bean 的生命周期进行管理的过程: 通过构造器或工厂方法创建 Bean 实例</description>
+    </item>
+    
+    <item>
+      <title>spEL</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-13/</link>
+      <pubDate>Sun, 08 Mar 2020 08:45:26 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-13/</guid>
+      <description>Spring表达式语言：SpEL 整数 #{5} 小数 #{89.7} 科学计数法 #{1e4} Boolean #{false} String #{&#39;Chuck&#39;}或者#{&amp;quot;Chuck&amp;quot;} 引用bean，</description>
+    </item>
+    
+    <item>
+      <title>外部属性文件</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-12/</link>
+      <pubDate>Sun, 08 Mar 2020 08:23:59 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-12/</guid>
+      <description>spring2.0 &amp;lt;bean class=&amp;quot;org.springframework.beans.factory.config.PropertyPlaceholderConfigurer&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;location&amp;quot; value=&amp;quot;classpath:XXX.properties&amp;quot;/&amp;gt; &amp;lt;/bean&amp;gt; Spring2.5后 &amp;lt;!--添加context Schema定义--&amp;gt; &amp;lt;context:property-placeholder location=&amp;quot;classpath:XXX.properties&amp;quot;/&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Bean的作用域</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-11/</link>
+      <pubDate>Sun, 08 Mar 2020 08:12:35 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-11/</guid>
+      <description>在 Spring 中, 可以在 元素的 scope 属性里设置 Bean 的作用域. 默认情况下, Spring 只为每个在 IOC 容器里声明的 Bean 创建唯一一个实例, 整个 IOC 容器范围内都能共享该实例：所有后</description>
+    </item>
+    
+    <item>
+      <title>Bean的继承和依赖</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-10/</link>
+      <pubDate>Sun, 08 Mar 2020 07:33:49 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-10/</guid>
+      <description>bean的继承 Spring 允许继承 bean 的配置, 被继承的 bean 称为父 bean. 继承这个父 Bean 的 Bean 称为子 Bean 子 Bean 从父 Bean 中继承配置, 包括 Bean 的属性配置 子 Bean 也可以覆盖从父 Bean 继承过</description>
+    </item>
+    
+    <item>
+      <title>Bean的自动装配</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-9/</link>
+      <pubDate>Sun, 08 Mar 2020 07:20:31 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-9/</guid>
+      <description>Spring IOC 容器可以自动装配 Bean. 需要做的仅仅是在 的 autowire 属性里指定自动装配的模式 byType(根据类型自动装配): 若 IOC 容器中有多个与目标 Bean 类型一致的 Bean. 在这</description>
+    </item>
+    
+    <item>
       <title>p名称空间</title>
       <link>https://uncletrump.github.io/2020/spring4-a-8/</link>
       <pubDate>Sun, 01 Mar 2020 16:33:47 +0000</pubDate>
       
       <guid>https://uncletrump.github.io/2020/spring4-a-8/</guid>
-      <description></description>
+      <description>P名称空间 为了简化 XML 文件的配置，越来越多的 XML 文件采用属性而非子元素配置信息。 Spring 从 2.5 版本开始引入了一个新的 p 命名空间，可以通过 元素属性的方式配</description>
     </item>
     
     <item>

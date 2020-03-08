@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-7/" />
-  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-9/" />
-  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-8/" />
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-14/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-16/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-15/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           p名称空间 | Bing
+           Bean后置处理器 | Bing
        
   </title>
-  <meta name="title" content="p名称空间 | Bing">
+  <meta name="title" content="Bean后置处理器 | Bing">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/uncletrump.github.io"
     },
     "articleSection" : "notes",
-    "name" : "p名称空间",
-    "headline" : "p名称空间",
-    "description" : "P名称空间 为了简化 XML 文件的配置，越来越多的 XML 文件采用属性而非子元素配置信息。 Spring 从 2.5 版本开始引入了一个新的 p 命名空间，可以通过 元素属性的方式配",
+    "name" : "Bean后置处理器",
+    "headline" : "Bean后置处理器",
+    "description" : "Bean 后置处理器允许在调用初始化方法前后对 Bean 进行额外的处理. Bean 后置处理器对 IOC 容器里的所有 Bean 实例逐一处理, 而非单一实例. 其典型应用是: 检查 Bean 属性的",
     "inLanguage" : "",
     "author" : "Bing",
     "creator" : "Bing",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Bing",
     "copyrightHolder" : "Bing",
     "copyrightYear" : "2020",
-    "datePublished": "2020-03-01 16:33:47 \x2b0000 UTC",
-    "dateModified" : "2020-03-01 16:33:47 \x2b0000 UTC",
-    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-8\/",
-    "wordCount" : "397",
+    "datePublished": "2020-03-08 15:33:22 \x2b0000 UTC",
+    "dateModified" : "2020-03-08 15:33:22 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-15\/",
+    "wordCount" : "492",
     "keywords" : [ "spring4", "Bing"]
 }
 </script>
@@ -120,11 +120,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">p名称空间</h1>
+        <h1 class="post-title" itemprop="name headline">Bean后置处理器</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-03-01 itemprop="datePublished">March 1, 2020</time>
+                on <time datetime=2020-03-08 itemprop="datePublished">March 8, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -152,31 +152,41 @@
 
           
 
-<h3 id="p名称空间">P名称空间</h3>
+<p>Bean 后置处理器允许在调用初始化方法前后对 Bean 进行额外的处理.</p>
 
-<p>为了简化 XML 文件的配置，越来越多的 XML 文件采用属性而非子元素配置信息。</p>
+<p>Bean 后置处理器对 IOC 容器里的所有 Bean 实例逐一处理, 而非单一实例. 其典型应用是: 检查 Bean 属性的正确性或根据特定的标准更改 Bean 的属性.</p>
 
-<p>Spring 从 2.5 版本开始引入了一个新的 p 命名空间，可以通过 <bean> 元素属性的方式配置 Bean 的属性。</p>
+<p>•对Bean 后置处理器而言, 需要实现BeanPostProcessor接口. 在初始化方法被调用前后, Spring 将把每个 Bean 实例分别传递给上述接口的以下两个方法:</p>
 
-<p>使用 p 命名空间后，基于 XML 的配置方式将进一步简化</p>
+<ul>
+<li>postProcessBeforeInitialization</li>
+<li>postProcessAfterInitialization</li>
+</ul>
 
-<p>JavaBean</p>
+<h4 id="执行顺序">执行顺序</h4>
 
-<pre><code class="language-java">public class Teacher {
+<ul>
+<li>通过构造器或工厂方法创建 Bean 实例</li>
+<li>为 Bean 的属性设置值和对其他 Bean 的引用</li>
+<li>将 Bean 实例传递给 Bean 后置处理器的 postProcessBeforeInitialization 方法</li>
+<li>调用 Bean 的初始化方法</li>
+<li>将 Bean 实例传递给 Bean 后置处理器的 postProcessAfterInitialization方法</li>
+<li>当容器关闭时, 调用 Bean 的销毁方法</li>
+</ul>
+
+<p>java</p>
+
+<pre><code class="language-java">public class LifeCycle {
 
     private String name;
 
-    private Integer age;
-
-    private Student student;
-
-    public Teacher() {
+    public LifeCycle() {
+        System.out.println(&quot;Constructor&quot;);
     }
 
-    public Teacher(String name, Integer age, Student student) {
+    public LifeCycle(String name) {
         this.name = name;
-        this.age = age;
-        this.student = student;
+        System.out.println(&quot;Constructor = &quot; + name);
     }
 
     public String getName() {
@@ -187,43 +197,52 @@
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public void executeInit(){
+        System.out.println(&quot;init&quot;);
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
+    public void destory(){
+        System.err.println(&quot;destory&quot;);
     }
 
     @Override
     public String toString() {
-        return &quot;Teacher{&quot; +
+        return &quot;LifeCycle{&quot; +
                 &quot;name='&quot; + name + '\'' +
-                &quot;, age=&quot; + age +
-                &quot;, student=&quot; + student +
                 '}';
     }
 }
+</code></pre>
 
+<p>MyBeanPostProcessor</p>
 
-public class TestMain {
+<pre><code class="language-java">public class MyBeanPostProcessor implements BeanPostProcessor {
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+        System.err.println(&quot;before:&quot;+bean+&quot;,&quot;+beanName);
+        return bean;
+    }
+
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+        System.err.println(&quot;after:&quot;+bean+&quot;,&quot;+beanName);
+        return bean;
+    }
+}
+</code></pre>
+
+<p>TestMain</p>
+
+<pre><code class="language-java">public class TestMain {
     public static void main(String[] args) {
 
         // 创建Spring IOC容器，并会调用构造方法，通过set方法对属性进行赋值
-        ApplicationContext ac=new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+        ClassPathXmlApplicationContext ac=new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
 
         // 从容器中获取bean对象
-        Teacher teacher =(Teacher) ac.getBean(&quot;teacher&quot;);
+        LifeCycle cycle = (LifeCycle) ac.getBean(&quot;cycle&quot;);
 
-        System.out.println(teacher);
+        System.err.println(cycle);
+
+        ac.close();
     }
 }
 </code></pre>
@@ -233,19 +252,14 @@ public class TestMain {
 <pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:util=&quot;http://www.springframework.org/schema/util&quot;
-       xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
-       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd&quot;&gt;
+       xmlns:p=&quot;http://www.springframework.org/schema/p&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
 
-    &lt;!--类型和索引可以混合使用--&gt;
-    &lt;!--按类型匹配--&gt;
-    &lt;bean id=&quot;student&quot; class=&quot;org.ouhei.spring.collections.Student&quot;&gt;
-        &lt;constructor-arg value=&quot;小明&quot; type=&quot;java.lang.String&quot;/&gt;
-        &lt;constructor-arg value=&quot;13014&quot; type=&quot;java.lang.Integer&quot;/&gt;
-        &lt;constructor-arg value=&quot;521.34&quot; type=&quot;java.lang.Double&quot;/&gt;
+    &lt;bean id=&quot;cycle&quot; class=&quot;org.ouhei.spring.beans.LifeCycle&quot; init-method=&quot;executeInit&quot; destroy-method=&quot;destory&quot;&gt;
+        &lt;property name=&quot;name&quot; value=&quot;lifeCycle&quot;/&gt;
     &lt;/bean&gt;
 
-    &lt;bean id=&quot;teacher&quot; class=&quot;org.ouhei.spring.collections.Teacher&quot; p:name=&quot;安斉らら&quot;
-    p:age=&quot;30&quot; p:student-ref=&quot;student&quot;/&gt;
+    &lt;bean class=&quot;org.ouhei.spring.beans.MyBeanPostProcessor&quot;/&gt;
 &lt;/beans&gt;
 </code></pre>
 
@@ -262,7 +276,7 @@ public class TestMain {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://uncletrump.github.io/2020/spring4-a-8/>https://uncletrump.github.io/2020/spring4-a-8/</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-15/>https://uncletrump.github.io/2020/spring4-a-15/</span>
             </p>
             
             
@@ -287,10 +301,10 @@ public class TestMain {
 
     <div class="post-nav">
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-7/" class="prev" rel="prev" title="utility scheme 定义集合"><i class="iconfont icon-left"></i>&nbsp;utility scheme 定义集合</a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-14/" class="prev" rel="prev" title="Bean的生命周期"><i class="iconfont icon-left"></i>&nbsp;Bean的生命周期</a>
          
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-9/" class="next" rel="next" title="Bean的自动装配">Bean的自动装配&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-16/" class="next" rel="next" title="静态工厂方法创建Bean">静态工厂方法创建Bean&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
