@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-20/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-21/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-19/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           基于注解创建Bean | Bing
+       
+  </title>
+  <meta name="title" content="基于注解创建Bean | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "基于注解创建Bean",
+    "headline" : "基于注解创建Bean",
+    "description" : "在 classpath 中扫描组件 组件扫描(component scanning): Spring 能够从 classpath 下自动扫描, 侦测和实例化具有特定注解的组件. 特定组件包括: @Component: 基本注解, 标识了一个受 Spring 管",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-06-06 17:19:19 \x2b0000 UTC",
+    "dateModified" : "2020-06-06 17:19:19 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-19\/",
+    "wordCount" : "1299",
+    "keywords" : [ "spring4", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">基于注解创建Bean</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-06-06 itemprop="datePublished">June 6, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/spring/"> spring </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h4 id="在-classpath-中扫描组件">在 classpath 中扫描组件</h4>
+
+<p>组件扫描(component scanning): Spring 能够从 classpath 下自动扫描, 侦测和实例化具有特定注解的组件.</p>
+
+<p>特定组件包括:</p>
+
+<ul>
+<li>@Component: 基本注解, 标识了一个受 Spring 管理的组件</li>
+<li>@Respository: 标识持久层组件</li>
+<li>@Service: 标识服务层(业务层)组件</li>
+<li>@Controller: 标识表现层组件</li>
+</ul>
+
+<p>对于扫描到的组件, <strong>Spring</strong> <strong>有默认的命名策略</strong>: 使用非限定类名, 第一个字母小写<strong>.</strong> <strong>也可以在注解中通过</strong> <strong>value</strong> 属性值标识组件的名称</p>
+
+<p>当在组件类上使用了特定的注解之后, 还需要在 Spring 的配置文件中声明 <strong>context:component-scan</strong></p>
+
+<ul>
+<li><p><strong>base-package</strong> <strong>属性指定一个需要扫描的基类包</strong>，<strong>Spring</strong> 容器将会扫描这个基类包里及其子包中的所有类</p></li>
+
+<li><p>当需要扫描多个包时,可以使用逗号分隔</p></li>
+
+<li><p>如果仅希望扫描特定的类而非基包下的所有类，可使用 resource-pattern 属性过滤特定的类</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+     xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+     xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+  
+  &lt;context:component-scan base-package=&quot;org.ouhei.spring&quot;
+      resource-pattern=&quot;beans/*.class&quot;&gt;
+  
+  &lt;/context:component-scan&gt;
+  
+&lt;/beans&gt;
+</code></pre></li>
+
+<li><p><strong>context:include-filter</strong>子节点表示要包含的目标类</p></li>
+
+<li><p><strong>context:exclude-filter</strong>子节点表示要排除在外的目标类</p></li>
+
+<li><p><strong>context:component-scan</strong> 下可以拥有若干个 context:include-filter 和 context:exclude-filter 子节点</p></li>
+</ul>
+
+<p>完整demo</p>
+
+<pre><code class="language-xml">&lt;context:component-scan base-package=&quot;com.wjx.betalot&quot; &lt;!-- 扫描的基本包路径 --&gt;
+                        annotation-config=&quot;true&quot; &lt;!-- 是否激活属性注入注解 --&gt;
+                        name-generator=&quot;org.springframework.context.annotation.AnnotationBeanNameGenerator&quot;  &lt;!-- Bean的ID策略生成器 --&gt;
+                        resource-pattern=&quot;**/*.class&quot; &lt;!-- 对资源进行筛选的正则表达式，这边是个大的范畴，具体细分在include-filter与exclude-filter中进行 --&gt;
+                        scope-resolver=&quot;org.springframework.context.annotation.AnnotationScopeMetadataResolver&quot; &lt;!-- scope解析器 ，与scoped-proxy只能同时配置一个 --&gt;
+                        scoped-proxy=&quot;no&quot; &lt;!-- scope代理，与scope-resolver只能同时配置一个 --&gt;
+                        use-default-filters=&quot;false&quot; &lt;!-- 是否使用默认的过滤器，默认值true --&gt;
+                                  &gt;
+            &lt;!-- 注意：若使用include-filter去定制扫描内容，要在use-default-filters=&quot;false&quot;的情况下，不然会“失效”，被默认的过滤机制所覆盖 --&gt;                   
+            &lt;!-- annotation是对注解进行扫描 --&gt;
+            &lt;context:include-filter type=&quot;annotation&quot; expression=&quot;org.springframework.stereotype.Component&quot;/&gt; 
+            &lt;!-- assignable是对类或接口进行扫描 --&gt;
+            &lt;context:include-filter type=&quot;assignable&quot; expression=&quot;com.wjx.betalot.performer.Performer&quot;/&gt;
+            &lt;context:include-filter type=&quot;assignable&quot; expression=&quot;com.wjx.betalot.performer.impl.Sonnet&quot;/&gt;
+
+            &lt;!-- 注意：在use-default-filters=&quot;false&quot;的情况下，exclude-filter是针对include-filter里的内容进行排除 --&gt;
+            &lt;context:exclude-filter type=&quot;annotation&quot; expression=&quot;org.springframework.stereotype.Controller&quot;/&gt;
+            &lt;context:exclude-filter type=&quot;assignable&quot; expression=&quot;com.wjx.betalot.performer.impl.RainPoem&quot;/&gt;
+            &lt;context:exclude-filter type=&quot;regex&quot; expression=&quot;.service.*&quot;/&gt; 
+
+&lt;/context:component-scan&gt;
+————————————————
+版权声明：本文为CSDN博主「摩尔__摩尔」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u011217058/java/article/details/67638634
+</code></pre>
+
+<p>context:include-filter 和 context:exclude-filter子节点支持多种类型的过滤表达式</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">类别</th>
+<th align="center">示例</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">annotation</td>
+<td align="center">com.spring.XxxAnnotation</td>
+<td align="center">所有标注了XxxAnnotation的类，该类型采用目标类是否标注了某个注解进行过虑(根据注解进行过滤)</td>
+</tr>
+
+<tr>
+<td align="center">assignable</td>
+<td align="center">com.spring.XxxService</td>
+<td align="center">所有继承或扩展XxxService的类，该类型采用目标类是否继承或扩展某个特定类进行过滤(根据具体的类或接口进行过滤)</td>
+</tr>
+
+<tr>
+<td align="center">aspectj</td>
+<td align="center">com.spring..*Service+</td>
+<td align="center">所有类名以Service结束的类及继承或者扩展他们的类，该类型采用AspectJ表达式进行过滤</td>
+</tr>
+
+<tr>
+<td align="center">regex</td>
+<td align="center">com.\spring.anno..*</td>
+<td align="center">所有com.spring.anno包下的类，该类型采用正则表达式根据类的名字进行过滤</td>
+</tr>
+
+<tr>
+<td align="center">custom</td>
+<td align="center">com.spring.XxxTypeFilter</td>
+<td align="center">采用XxxTyperFilter通过代码的方式定义过滤规则，该类型必须实现org.springframework.core.type.TypeFilter接口</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-19/>https://uncletrump.github.io/2020/spring4-a-19/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/spring4/">
+                    #spring4</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2020/spring4-a-20/" class="prev" rel="prev" title="组件装配"><i class="iconfont icon-left"></i>&nbsp;组件装配</a>
+         
+        
+        <a href="https://uncletrump.github.io/2020/spring4-a-21/" class="next" rel="next" title="Spring AOP">Spring AOP&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-15/" />
-  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-17/" />
-  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-16/" />
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-18/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-19/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-20/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           静态工厂方法创建Bean | Bing
+           组件装配 | Bing
        
   </title>
-  <meta name="title" content="静态工厂方法创建Bean | Bing">
+  <meta name="title" content="组件装配 | Bing">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/uncletrump.github.io"
     },
     "articleSection" : "notes",
-    "name" : "静态工厂方法创建Bean",
-    "headline" : "静态工厂方法创建Bean",
-    "description" : "调用静态工厂方法创建 Bean是将对象创建的过程封装到静态方法中. 当客户端需要对象时, 只需要简单地调用静态方法, 而不同关心创建对象的细节. 要声",
+    "name" : "组件装配",
+    "headline" : "组件装配",
+    "description" : "•context:component-scan 元素还会自动注册 AutowiredAnnotationBeanPostProcessor 实例, 该实例可以自动装配具有 @Autowired和 @Resource @Inject注解的属性",
     "inLanguage" : "",
     "author" : "Bing",
     "creator" : "Bing",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Bing",
     "copyrightHolder" : "Bing",
     "copyrightYear" : "2020",
-    "datePublished": "2020-03-08 15:43:36 \x2b0000 UTC",
-    "dateModified" : "2020-03-08 15:43:36 \x2b0000 UTC",
-    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-16\/",
-    "wordCount" : "338",
+    "datePublished": "2020-06-06 17:16:32 \x2b0000 UTC",
+    "dateModified" : "2020-06-06 17:16:32 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-20\/",
+    "wordCount" : "531",
     "keywords" : [ "spring4", "Bing"]
 }
 </script>
@@ -120,11 +120,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">静态工厂方法创建Bean</h1>
+        <h1 class="post-title" itemprop="name headline">组件装配</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-03-08 itemprop="datePublished">March 8, 2020</time>
+                on <time datetime=2020-06-06 itemprop="datePublished">June 6, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -150,56 +150,32 @@
           
           
 
-          <p>调用静态工厂方法创建 Bean是将对象创建的过程封装到静态方法中. 当客户端需要对象时, 只需要简单地调用静态方法, 而不同关心创建对象的细节.</p>
+          
 
-<p>要声明通过静态方法创建的 Bean, 需要在 Bean 的 class 属性里指定拥有该工厂的方法的类, 同时在 factory-method 属性里指定工厂方法的名称. 最后, 使用 <constrctor-arg> 元素为该方法传递方法参数.</p>
+<p>•context:component-scan 元素还会自动注册 AutowiredAnnotationBeanPostProcessor 实例, 该实例可以自动装配具有 @Autowired和 @Resource @Inject注解的属性.</p>
 
-<p>Java</p>
+<h4 id="autowired-自动装配-bean">@Autowired 自动装配 Bean</h4>
 
-<pre><code class="language-java">public class StaticFactory {
-    private static Map&lt;String, Student&gt; students = new HashMap&lt;String,Student&gt;();
+<p>@Autowired 注解自动装配具有兼容类型的单个 Bean属性</p>
 
-    static{
-        students.put(&quot;13010&quot;,new Student(&quot;小明&quot;,13010,85.0));
-        students.put(&quot;13014&quot;,new Student(&quot;ouhei&quot;,13014,86.0));
-    }
+<ul>
+<li>构造器, 普通字段(即使是非 public), 一切具有参数的方法都可以应用@Autowired 注解</li>
+<li>默认情况下, 所有使用 @Autowired 注解的属性都需要被设置. 当 Spring 找不到匹配的 Bean 装配属性时, 会抛出异常, 若某一属性允许不被设置, 可以设置 @Autowired 注解的 required 属性为 false</li>
+<li>默认情况下, 当 IOC 容器里存在多个类型兼容的 Bean 时, 通过类型的自动装配将无法工作. 此时可以在 @Qualifier 注解里提供 Bean 的名称. Spring 允许对方法的入参标注 @Qualifiter 已指定注入 Bean 的名称</li>
+<li>@Autowired 注解也可以应用在数组类型的属性上, 此时 Spring 将会把所有匹配的 Bean 进行自动装配.</li>
+<li>@Autowired 注解也可以应用在集合属性上, 此时 Spring 读取该集合的类型信息, 然后自动装配所有与之兼容的 Bean.</li>
+<li>@Autowired 注解用在 java.util.Map 上时, 若该 Map 的键值为 String, 那么 Spring 将自动装配与之 Map 值类型兼容的 Bean, 此时 Bean 的名称作为键值</li>
+</ul>
 
-    public static Student getStudent(String name){
-        return students.get(&quot;name&quot;);
-    }
-}
+<h4 id="使用-resource-或-inject-自动装配-bean">使用 @Resource 或 @Inject 自动装配 Bean</h4>
 
-</code></pre>
+<p>Spring 还支持 @Resource 和 @Inject 注解，这两个注解和 @Autowired 注解的功用类似</p>
 
-<p>TestMain</p>
+<p>@Resource 注解要求提供一个 Bean 名称的属性，若该属性为空，则自动采用标注处的变量或方法名作为 Bean 的名称</p>
 
-<pre><code class="language-java">public class TestMain {
-    public static void main(String[] args) {
+<p>@Inject 和 @Autowired 注解一样也是按类型匹配注入的 Bean， 但没有 reqired 属性</p>
 
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;bean-factory.xml&quot;);
-        Student student1 = (Student)ctx.getBean(&quot;student&quot;);
-        System.out.println(student1);
-    }
-}
-</code></pre>
-
-<p>xml</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
-    &lt;!--
-        class:指向静态工厂方法全类名
-        factory-method：指向静态工厂方法的名字
-        constructor-arg:如果工厂方法需要传入参数，则使用constructor-arg来配置参数
-    --&gt;
-    &lt;bean id=&quot;student&quot; class=&quot;org.ouhei.spring.factory.StaticFactory&quot;
-    factory-method=&quot;getStudent&quot;&gt;
-        &lt;constructor-arg value=&quot;13014&quot;&gt;&lt;/constructor-arg&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;
-</code></pre>
+<p><strong>spring4开始支持泛型依赖注入</strong></p>
 
     </div>
 
@@ -214,7 +190,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://uncletrump.github.io/2020/spring4-a-16/>https://uncletrump.github.io/2020/spring4-a-16/</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-20/>https://uncletrump.github.io/2020/spring4-a-20/</span>
             </p>
             
             
@@ -239,10 +215,10 @@
 
     <div class="post-nav">
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-15/" class="prev" rel="prev" title="Bean后置处理器"><i class="iconfont icon-left"></i>&nbsp;Bean后置处理器</a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-18/" class="prev" rel="prev" title="FactoryBean创建bean"><i class="iconfont icon-left"></i>&nbsp;FactoryBean创建bean</a>
          
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-17/" class="next" rel="next" title="实例工厂方法创建bean">实例工厂方法创建bean&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-19/" class="next" rel="next" title="基于注解创建Bean">基于注解创建Bean&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

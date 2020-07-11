@@ -5,10 +5,91 @@
     <link>https://uncletrump.github.io/categories/spring/</link>
     <description>Recent content in spring on Bing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 08 Mar 2020 15:43:36 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2020 09:58:11 +0000</lastBuildDate>
     
 	<atom:link href="https://uncletrump.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>XML配置AOP</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-25/</link>
+      <pubDate>Sat, 11 Jul 2020 09:58:11 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-25/</guid>
+      <description>xml &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xmlns:context=&amp;quot;http://www.springframework.org/schema/context&amp;quot; xmlns:aop=&amp;quot;http://www.springframework.org/schema/aop&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd&amp;quot;&amp;gt; &amp;lt;!--配置bean--&amp;gt; &amp;lt;bean id=&amp;quot;testService&amp;quot; class=&amp;quot;org.ouhei.spring.serviceImpl.TestServiceImpl&amp;quot;&amp;gt;&amp;lt;/bean&amp;gt; &amp;lt;!--配置切面--&amp;gt; &amp;lt;bean id=&amp;quot;demo&amp;quot; class=&amp;quot;org.ouhei.spring.aop.Demo&amp;quot;&amp;gt;&amp;lt;/bean&amp;gt; &amp;lt;!--配置AOP-</description>
+    </item>
+    
+    <item>
+      <title>切面优先级和重用切入点定义</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-24/</link>
+      <pubDate>Wed, 08 Jul 2020 14:38:01 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-24/</guid>
+      <description>指定切面的优先级 •在同一个连接点上应用不止一个切面时, 除非明确指定, 否则它们的优先级是不确定的. •切面的优先级可以通过实现 Ordered 接口或利用 @Order 注解</description>
+    </item>
+    
+    <item>
+      <title>切点表达式</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-23/</link>
+      <pubDate>Wed, 24 Jun 2020 14:26:49 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-23/</guid>
+      <description>利用方法签名编写 AspectJ 切入点表达式 •最典型的切入点表达式时根据方法的签名来匹配各种方法: // 匹配ServiceImpl中声明的所有方法 // 第一个*代</description>
+    </item>
+    
+    <item>
+      <title>Spring AOP Demo</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-22/</link>
+      <pubDate>Wed, 17 Jun 2020 15:09:12 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-22/</guid>
+      <description>导入spring aop依赖jar &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aop --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aop&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.2.0.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-aspects&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.0.RELEASE&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.aspectj&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aspectjweaver&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.aspectj&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aspectjrt&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.9.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.aspectj&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aspectjweaver&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.9.5&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- https://mvnrepository.com/artifact/cglib/cglib --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;cglib&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;cglib&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.2.2&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 配置文件中加入a</description>
+    </item>
+    
+    <item>
+      <title>Spring AOP</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-21/</link>
+      <pubDate>Sat, 06 Jun 2020 17:39:31 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-21/</guid>
+      <description>AOP(Aspect-Oriented Programming, 面向切面编程): 是一种新的方法论, 是对传统 OOP(Object-Oriented Programming, 面向对象编程) 的补充. AOP 的主要编程对象是切面(aspect), 而切面模块化横切关注点. 在应</description>
+    </item>
+    
+    <item>
+      <title>基于注解创建Bean</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-19/</link>
+      <pubDate>Sat, 06 Jun 2020 17:19:19 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-19/</guid>
+      <description>在 classpath 中扫描组件 组件扫描(component scanning): Spring 能够从 classpath 下自动扫描, 侦测和实例化具有特定注解的组件. 特定组件包括: @Component: 基本注解, 标识了一个受 Spring 管</description>
+    </item>
+    
+    <item>
+      <title>组件装配</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-20/</link>
+      <pubDate>Sat, 06 Jun 2020 17:16:32 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-20/</guid>
+      <description>•context:component-scan 元素还会自动注册 AutowiredAnnotationBeanPostProcessor 实例, 该实例可以自动装配具有 @Autowired和 @Resource @Inject注解的属性</description>
+    </item>
+    
+    <item>
+      <title>FactoryBean创建bean</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-18/</link>
+      <pubDate>Sat, 06 Jun 2020 16:19:31 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-18/</guid>
+      <description>Java package org.ouhei.spring.factory; import org.ouhei.spring.beans.Student; import org.springframework.beans.factory.FactoryBean; /** * @author OuHei * @create 2020/06/07 */ public class DemoFactoryBean implements FactoryBean&amp;lt;Student&amp;gt; { public Student getObject() throws Exception { return new Student(&amp;quot;ouhei&amp;quot;,13014,91.1); } public Class&amp;lt;?&amp;gt; getObjectType() { return Student.class; } public boolean isSingleton() { return true; } } xml &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&amp;quot;&amp;gt; &amp;lt;!-- 通过FactoryBean来</description>
+    </item>
+    
+    <item>
+      <title>实例工厂方法创建bean</title>
+      <link>https://uncletrump.github.io/2020/spring4-a-17/</link>
+      <pubDate>Thu, 14 May 2020 07:18:58 +0000</pubDate>
+      
+      <guid>https://uncletrump.github.io/2020/spring4-a-17/</guid>
+      <description>java /** * @author OuHei * @create 2020/05/14 */ public class InstanceFactory { private Map&amp;lt;String, Student&amp;gt; students; public InstanceFactory(){ students = new HashMap&amp;lt;String, Student&amp;gt;(); students.put(&amp;quot;13010&amp;quot;,new Student(&amp;quot;小明&amp;quot;,13010,85.0)); students.put(&amp;quot;13014&amp;quot;,new Student(&amp;quot;ouhei&amp;quot;,13014,86.0)); } public Student getStudent(String key){ return students.get(key);</description>
+    </item>
     
     <item>
       <title>静态工厂方法创建Bean</title>

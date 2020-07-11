@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-15/" />
-  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-17/" />
-  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-16/" />
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-23/" />
+  <link rel="next" href="https://uncletrump.github.io/2020/spring4-a-25/" />
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-24/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           静态工厂方法创建Bean | Bing
+           切面优先级和重用切入点定义 | Bing
        
   </title>
-  <meta name="title" content="静态工厂方法创建Bean | Bing">
+  <meta name="title" content="切面优先级和重用切入点定义 | Bing">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/uncletrump.github.io"
     },
     "articleSection" : "notes",
-    "name" : "静态工厂方法创建Bean",
-    "headline" : "静态工厂方法创建Bean",
-    "description" : "调用静态工厂方法创建 Bean是将对象创建的过程封装到静态方法中. 当客户端需要对象时, 只需要简单地调用静态方法, 而不同关心创建对象的细节. 要声",
+    "name" : "切面优先级和重用切入点定义",
+    "headline" : "切面优先级和重用切入点定义",
+    "description" : "指定切面的优先级 •在同一个连接点上应用不止一个切面时, 除非明确指定, 否则它们的优先级是不确定的. •切面的优先级可以通过实现 Ordered 接口或利用 @Order 注解",
     "inLanguage" : "",
     "author" : "Bing",
     "creator" : "Bing",
@@ -54,10 +54,10 @@
     "accountablePerson" : "Bing",
     "copyrightHolder" : "Bing",
     "copyrightYear" : "2020",
-    "datePublished": "2020-03-08 15:43:36 \x2b0000 UTC",
-    "dateModified" : "2020-03-08 15:43:36 \x2b0000 UTC",
-    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-16\/",
-    "wordCount" : "338",
+    "datePublished": "2020-07-08 14:38:01 \x2b0000 UTC",
+    "dateModified" : "2020-07-08 14:38:01 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-24\/",
+    "wordCount" : "433",
     "keywords" : [ "spring4", "Bing"]
 }
 </script>
@@ -120,11 +120,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">静态工厂方法创建Bean</h1>
+        <h1 class="post-title" itemprop="name headline">切面优先级和重用切入点定义</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-03-08 itemprop="datePublished">March 8, 2020</time>
+                on <time datetime=2020-07-08 itemprop="datePublished">July 8, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -150,56 +150,52 @@
           
           
 
-          <p>调用静态工厂方法创建 Bean是将对象创建的过程封装到静态方法中. 当客户端需要对象时, 只需要简单地调用静态方法, 而不同关心创建对象的细节.</p>
+          
 
-<p>要声明通过静态方法创建的 Bean, 需要在 Bean 的 class 属性里指定拥有该工厂的方法的类, 同时在 factory-method 属性里指定工厂方法的名称. 最后, 使用 <constrctor-arg> 元素为该方法传递方法参数.</p>
+<h3 id="指定切面的优先级">指定切面的优先级</h3>
 
-<p>Java</p>
+<p>•在同一个连接点上应用不止一个切面时, 除非明确指定, 否则它们的优先级是不确定的.</p>
 
-<pre><code class="language-java">public class StaticFactory {
-    private static Map&lt;String, Student&gt; students = new HashMap&lt;String,Student&gt;();
+<p>•切面的优先级可以通过实现 Ordered 接口或利用 @Order 注解指定.</p>
 
-    static{
-        students.put(&quot;13010&quot;,new Student(&quot;小明&quot;,13010,85.0));
-        students.put(&quot;13014&quot;,new Student(&quot;ouhei&quot;,13014,86.0));
-    }
+<p>•实现 Ordered 接口, getOrder() 方法的返回值越小, 优先级越高.</p>
 
-    public static Student getStudent(String name){
-        return students.get(&quot;name&quot;);
-    }
+<p>•若使用 @Order 注解, 序号出现在注解中</p>
+
+<pre><code class="language-java">// order值越小优先级越高
+
+@Order(0)
+@Component
+@Aspect
+public class exampleAspect{}
+
+@Order(1)
+@Component
+@Aspect
+public class exampleAspect{}
+</code></pre>
+
+<h3 id="重用切入点定义">重用切入点定义</h3>
+
+<ul>
+<li>在编写 AspectJ 切面时, 可以直接在通知注解中书写切入点表达式. 但同一个切点表达式可能会在多个通知中重复出现.</li>
+<li>在 AspectJ 切面中, 可以通过 @Pointcut 注解将一个切入点声明成简单的方法. 切入点的方法体通常是空的, 因为将切入点定义与应用程序逻辑混在一起是不合理的.</li>
+<li>切入点方法的访问控制符同时也控制着这个切入点的可见性. 如果切入点要在多个切面中共用, 最好将它们集中在一个公共的类中. 在这种情况下, 它们必须被声明为 public. 在引入这个切入点时, 必须将类名也包括在内. 如果类没有与这个切面放在同一个包中, 还必须包含包名.</li>
+
+<li><p>其他通知可以通过方法名称引入该切入点.</p>
+
+<pre><code class="language-Java">@Pointcut(&quot;execution(* org.ouhei.spring.serviceImpl.*.*(int,int))&quot;)
+public void exampleJoinPoint(){}
+
+@Before(&quot;exampleJoinPoint()&quot;)
+public void beforeTest(JoinPoint joinPoint) {
+String methodName = joinPoint.getSignature().getName();
+Object[] args = joinPoint.getArgs();
+System.err.println(&quot;the method &quot; + methodName + &quot; begin with &quot; + Arrays.asList(args));
 }
 
-</code></pre>
-
-<p>TestMain</p>
-
-<pre><code class="language-java">public class TestMain {
-    public static void main(String[] args) {
-
-        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;bean-factory.xml&quot;);
-        Student student1 = (Student)ctx.getBean(&quot;student&quot;);
-        System.out.println(student1);
-    }
-}
-</code></pre>
-
-<p>xml</p>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
-    &lt;!--
-        class:指向静态工厂方法全类名
-        factory-method：指向静态工厂方法的名字
-        constructor-arg:如果工厂方法需要传入参数，则使用constructor-arg来配置参数
-    --&gt;
-    &lt;bean id=&quot;student&quot; class=&quot;org.ouhei.spring.factory.StaticFactory&quot;
-    factory-method=&quot;getStudent&quot;&gt;
-        &lt;constructor-arg value=&quot;13014&quot;&gt;&lt;/constructor-arg&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;
-</code></pre>
+</code></pre></li>
+</ul>
 
     </div>
 
@@ -214,7 +210,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://uncletrump.github.io/2020/spring4-a-16/>https://uncletrump.github.io/2020/spring4-a-16/</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-24/>https://uncletrump.github.io/2020/spring4-a-24/</span>
             </p>
             
             
@@ -239,10 +235,10 @@
 
     <div class="post-nav">
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-15/" class="prev" rel="prev" title="Bean后置处理器"><i class="iconfont icon-left"></i>&nbsp;Bean后置处理器</a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-23/" class="prev" rel="prev" title="切点表达式"><i class="iconfont icon-left"></i>&nbsp;切点表达式</a>
          
         
-        <a href="https://uncletrump.github.io/2020/spring4-a-17/" class="next" rel="next" title="实例工厂方法创建bean">实例工厂方法创建bean&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://uncletrump.github.io/2020/spring4-a-25/" class="next" rel="next" title="XML配置AOP">XML配置AOP&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

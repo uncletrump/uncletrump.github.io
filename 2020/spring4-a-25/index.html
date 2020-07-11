@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Bing">
+  
+  
+  
+  <link rel="prev" href="https://uncletrump.github.io/2020/spring4-a-24/" />
+  
+  <link rel="canonical" href="https://uncletrump.github.io/2020/spring4-a-25/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           XML配置AOP | Bing
+       
+  </title>
+  <meta name="title" content="XML配置AOP | Bing">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/uncletrump.github.io"
+    },
+    "articleSection" : "notes",
+    "name" : "XML配置AOP",
+    "headline" : "XML配置AOP",
+    "description" : "xml \x26lt;?xml version=\x26quot;1.0\x26quot; encoding=\x26quot;UTF-8\x26quot;?\x26gt; \x26lt;beans xmlns=\x26quot;http:\/\/www.springframework.org\/schema\/beans\x26quot; xmlns:xsi=\x26quot;http:\/\/www.w3.org\/2001\/XMLSchema-instance\x26quot; xmlns:context=\x26quot;http:\/\/www.springframework.org\/schema\/context\x26quot; xmlns:aop=\x26quot;http:\/\/www.springframework.org\/schema\/aop\x26quot; xsi:schemaLocation=\x26quot;http:\/\/www.springframework.org\/schema\/beans http:\/\/www.springframework.org\/schema\/beans\/spring-beans.xsd http:\/\/www.springframework.org\/schema\/context https:\/\/www.springframework.org\/schema\/context\/spring-context.xsd http:\/\/www.springframework.org\/schema\/aop http:\/\/www.springframework.org\/schema\/aop\/spring-aop.xsd\x26quot;\x26gt; \x26lt;!--配置bean--\x26gt; \x26lt;bean id=\x26quot;testService\x26quot; class=\x26quot;org.ouhei.spring.serviceImpl.TestServiceImpl\x26quot;\x26gt;\x26lt;\/bean\x26gt; \x26lt;!--配置切面--\x26gt; \x26lt;bean id=\x26quot;demo\x26quot; class=\x26quot;org.ouhei.spring.aop.Demo\x26quot;\x26gt;\x26lt;\/bean\x26gt; \x26lt;!--配置AOP-",
+    "inLanguage" : "",
+    "author" : "Bing",
+    "creator" : "Bing",
+    "publisher": "Bing",
+    "accountablePerson" : "Bing",
+    "copyrightHolder" : "Bing",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-11 09:58:11 \x2b0000 UTC",
+    "dateModified" : "2020-07-11 09:58:11 \x2b0000 UTC",
+    "url" : "https:\/\/uncletrump.github.io\/2020\/spring4-a-25\/",
+    "wordCount" : "498",
+    "keywords" : [ "spring4", "Bing"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://uncletrump.github.io">Bing</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/notes/" title="">Notes</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">XML配置AOP</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://uncletrump.github.io" rel="author">Bing</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-07-11 itemprop="datePublished">July 11, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://uncletrump.github.io/categories/spring/"> spring </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>xml</p>
+
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd&quot;&gt;
+
+    &lt;!--配置bean--&gt;
+    &lt;bean id=&quot;testService&quot;
+          class=&quot;org.ouhei.spring.serviceImpl.TestServiceImpl&quot;&gt;&lt;/bean&gt;
+
+    &lt;!--配置切面--&gt;
+    &lt;bean id=&quot;demo&quot; class=&quot;org.ouhei.spring.aop.Demo&quot;&gt;&lt;/bean&gt;
+
+    &lt;!--配置AOP--&gt;
+    &lt;aop:config&gt;
+        &lt;!--配置切点表达式--&gt;
+        &lt;aop:pointcut id=&quot;pointcut&quot; expression=&quot;execution(public int org.ouhei.spring.serviceImpl.TestServiceImpl.sum(int,int))&quot;/&gt;
+        &lt;!--配置切面及通知--&gt;
+        &lt;aop:aspect ref=&quot;demo&quot; order=&quot;0&quot;&gt;
+            &lt;aop:before method=&quot;beforeTest&quot; pointcut-ref=&quot;pointcut&quot;&gt;&lt;/aop:before&gt;
+            &lt;aop:after method=&quot;afterTest&quot; pointcut-ref=&quot;pointcut&quot;&gt;&lt;/aop:after&gt;
+        &lt;/aop:aspect&gt;
+        &lt;!--配置切面及通知--&gt;
+        &lt;!--配置切面及通知--&gt;
+    &lt;/aop:config&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<p>切面</p>
+
+<pre><code class="language-java">package org.ouhei.spring.aop;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+
+/**
+ * @author OuHei
+ * @create 2020/06/18
+ */
+public class Demo {
+
+    public void beforeTest(JoinPoint joinPoint) {
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.err.println(&quot;the method &quot; + methodName + &quot; begin with &quot; + Arrays.asList(args));
+    }
+
+    public void afterTest(JoinPoint joinPoint) {
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.err.println(&quot;the method &quot; + methodName + &quot; end with &quot; + Arrays.asList(args));
+    }
+
+    public void afterReturningTest(JoinPoint joinPoint, Object result) {
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.err.println(&quot;the method &quot; + methodName + &quot; end with &quot; + Arrays.asList(args) + &quot; result &quot; + result);
+    }
+
+    public void afterThrowingTest(JoinPoint joinPoint, Exception ex) {
+        String methodName = joinPoint.getSignature().getName();
+        Object[] args = joinPoint.getArgs();
+        System.err.println(&quot;the method &quot; + methodName + &quot; end with &quot; + Arrays.asList(args) + &quot; Exception &quot; + ex);
+    }
+
+    public Object aroundTest(ProceedingJoinPoint proceedingJoinPoint) {
+        Object result = null;
+        String methodName = proceedingJoinPoint.getSignature().getName();
+        try {
+            // 此处即是执行目标方法
+            // 可以在之前或者之后模拟前置和后置通知
+            result = proceedingJoinPoint.proceed();
+        } catch (Throwable e) {
+            // 可以在此模拟异常通知
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+}
+
+</code></pre>
+
+<p>接口</p>
+
+<pre><code class="language-java">package org.ouhei.spring.service;
+
+/**
+ * @author OuHei
+ * @create 2020/06/23
+ */
+public interface TestService {
+    int sum(int a,int b);
+}
+
+
+
+package org.ouhei.spring.serviceImpl;
+
+import org.ouhei.spring.service.TestService;
+
+/**
+ * @author OuHei
+ * @create 2020/06/23
+ */
+public class TestServiceImpl implements TestService {
+    public int sum(int a, int b) {
+        System.out.println(a + b);
+        return a + b;
+    }
+}
+
+</code></pre>
+
+<p>运行</p>
+
+<pre><code class="language-java">package org.ouhei.spring.main;
+
+import org.ouhei.spring.service.TestService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * @author OuHei
+ * @create 2020/02/28
+ */
+public class TestMain {
+
+    public static void main(String[] args) {
+
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(&quot;bean-factory.xml&quot;);
+        TestService bean = (TestService) ctx.getBean(&quot;testService&quot;);
+        bean.sum(3, 5);
+    }
+}
+
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Bing </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://uncletrump.github.io/2020/spring4-a-25/>https://uncletrump.github.io/2020/spring4-a-25/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://uncletrump.github.io/tags/spring4/">
+                    #spring4</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://uncletrump.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://uncletrump.github.io/2020/spring4-a-24/" class="prev" rel="prev" title="切面优先级和重用切入点定义"><i class="iconfont icon-left"></i>&nbsp;切面优先级和重用切入点定义</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://uncletrump.github.io">Bing</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
